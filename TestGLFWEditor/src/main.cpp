@@ -1,11 +1,25 @@
 #include <iostream>
+#include <memory>
 
-#include "TestGLFWCore/Utils/test.hpp"
+#include "TestGLFWCore/Application.hpp"
+
+
+class MyApp : public TestGLFW::Application
+{
+	void on_update() override
+	{
+		std::cout << "Update frame: " << frame++ << std::endl;
+	}
+
+	int frame = 0;
+};
 
 
 int main()
 {
-	TestGLFW::sayHello();
+	auto myApp = std::make_unique<MyApp>();
 
-	return 0;
+	int returnCode = myApp->start(1024, 768, "My first app");
+
+	return returnCode;
 }
