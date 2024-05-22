@@ -15,3 +15,6 @@ C:/Users/Владимир/source/repos/ЛР_компьютерная_графи�
 C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/spdlog/CMakeFiles/spdlog.dir
 C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/spdlog/CMakeFiles/INSTALL.dir
 C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/spdlog/CMakeFiles/ALL_BUILD.dir
+C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/glad/CMakeFiles/glad.dir
+C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/glad/CMakeFiles/INSTALL.dir
+C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/glad/CMakeFiles/ALL_BUILD.dir

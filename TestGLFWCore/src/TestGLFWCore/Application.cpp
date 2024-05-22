@@ -4,9 +4,10 @@
 
 
 #include "TestGLFWCore/Application.hpp"
-
-#include <GLFW/glfw3.h>
 #include <TestGLFWCore/Log.hpp> 
+
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 #include <iostream>
 
@@ -14,14 +15,7 @@ namespace TestGLFW
 {
 	Application::Application()
 	{
-        LOG_INFO("Welcome to spdlog!");
-        LOG_ERROR("Some error message with arg: {}", 1);
-
-        LOG_WARN("Easy padding in numbers like {:08d}", 12);
-        LOG_CRITICAL("Support for int: {0:d};  hex: {0:x};  oct: {0:o}; bin: {0:b}", 42);
-        LOG_INFO("Support for floats {:03.2f}", 1.23456);
-        LOG_INFO("Positional args are {1} {0}..", "too", "supported");
-        LOG_INFO("{:<30}", "left aligned");
+        
 	}
 
 	Application::~Application()
@@ -33,36 +27,51 @@ namespace TestGLFW
 	{
         GLFWwindow* window;
 
-        /* Initialize the library */
+        // инициализация GLFW
         if (!glfwInit())
+        {
+            LOG_CRITICAL("Failed to initialize GLFW!");
             return -1;
+        }
 
-        /* Create a windowed mode window and its OpenGL context */
+        // создание объекта окна
         window = glfwCreateWindow(window_width, window_height, window_title, NULL, NULL);
         if (!window)
         {
             glfwTerminate();
             return -1;
         }
-
-        /* Make the window's context current */
         glfwMakeContextCurrent(window);
 
-        /* Loop until the user closes the window */
+
+        // Инициализация GLAD
+        if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+        {
+            LOG_CRITICAL("Failed to initialize GLAD!");
+            return -1;
+        }
+
+
+        // установка цвета заливки буфера цвета
+        glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
+
+        // цикл рендеринга
         while (!glfwWindowShouldClose(window))
         {
-            /* Render here */
-            //glClear(GL_COLOR_BUFFER_BIT);
+            // рендеринг
 
-            /* Swap front and back buffers */
+            // очистка буфера цвета
+            glClear(GL_COLOR_BUFFER_BIT);
+
+            // смена содержимого буферов и обработка событий
             glfwSwapBuffers(window);
-
-            /* Poll for and process events */
             glfwPollEvents();
 
+            // обновление фрейма
             on_update();
         }
 
+        // освобождение ресурсов 
         glfwTerminate();
         return 0;
 	}
