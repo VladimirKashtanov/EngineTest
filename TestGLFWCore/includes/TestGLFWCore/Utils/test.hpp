@@ -1,0 +1,4 @@
+namespace TestGLFW 
+{
+	void sayHello();
+}

@@ -1,0 +1,4 @@
+C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWEditor/CMakeFiles/TestGLFWEditor.dir
+C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/CMakeFiles/TestGLFWCore.dir
