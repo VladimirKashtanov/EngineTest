@@ -7,12 +7,18 @@ set(ENGINE_PUBLIC_INCLUDES
 	includes/TestGLFWCore/Log.hpp
 )
 
+set(ENGINE_PRIVATE_INCLUDES
+	includes/TestGLFWCore/Window.hpp
+)
+
 set(ENGINE_PRIVATE_SOURCES
 	src/TestGLFWCore/Application.cpp
+	src/TestGLFWCore/Window.cpp
 )
 
 add_library(${ENGINE_PROJECT_NAME} STATIC 
 	${ENGINE_PUBLIC_INCLUDES}
+	${ENGINE_PRIVATE_INCLUDES}
 	${ENGINE_PRIVATE_SOURCES}
 )
 
