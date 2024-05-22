@@ -35,6 +35,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/glfw/cmake_install.cmake")
+  include("C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/spdlog/cmake_install.cmake")
 
 endif()
 

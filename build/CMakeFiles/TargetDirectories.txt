@@ -12,3 +12,6 @@ C:/Users/Владимир/source/repos/ЛР_компьютерная_графи�
 C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/glfw/src/CMakeFiles/update_mappings.dir
 C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/glfw/src/CMakeFiles/INSTALL.dir
 C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/glfw/docs/CMakeFiles/INSTALL.dir
+C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/spdlog/CMakeFiles/spdlog.dir
+C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/spdlog/CMakeFiles/INSTALL.dir
+C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/spdlog/CMakeFiles/ALL_BUILD.dir
