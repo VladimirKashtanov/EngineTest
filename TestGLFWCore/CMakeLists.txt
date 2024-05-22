@@ -5,6 +5,7 @@ set(ENGINE_PROJECT_NAME TestGLFWCore)
 set(ENGINE_PUBLIC_INCLUDES
 	includes/TestGLFWCore/Application.hpp
 	includes/TestGLFWCore/Log.hpp
+	includes/TestGLFWCore/Event.hpp
 )
 
 set(ENGINE_PRIVATE_INCLUDES
@@ -23,6 +24,7 @@ add_library(${ENGINE_PROJECT_NAME} STATIC
 )
 
 target_include_directories(${ENGINE_PROJECT_NAME} PUBLIC includes)
+target_include_directories(${ENGINE_PROJECT_NAME} PRIVATE src)
 target_compile_features(${ENGINE_PROJECT_NAME} PUBLIC cxx_std_17)
 
 # внешние библиотеки

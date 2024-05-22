@@ -3,6 +3,8 @@
 #define _APPLICATION_HPP
 
 
+#include <TestGLFWCore/Event.hpp>
+
 #include <memory>
 
 
@@ -20,10 +22,14 @@ namespace TestGLFW
 		Application& operator=(Application&&)      = delete;
 
 		virtual int start(unsigned int window_width, unsigned int window_height, const char* window_title);
+
 		virtual void on_update() { }
 
 	private:
 		std::unique_ptr<struct Window> m_pWindow;
+
+		EventDispatcher m_event_dispatcher;
+		bool        m_bCloseWindow = false;
 	};
 }
 
