@@ -12,6 +12,8 @@
 #include <imgui/backends/imgui_impl_opengl3.h>
 #include <imgui/backends/imgui_impl_glfw.h>
 
+#include <glm/mat3x3.hpp>
+
 
 namespace TestGLFW
 {
@@ -171,6 +173,17 @@ namespace TestGLFW
 
 		p_vao->add_vertex_buffer(*p_positions_colors_vbo);
 		p_vao->set_index_buffer(*p_index_buffer);
+
+
+		glm::mat3 mat_1(4, 0, 0, 2, 8, 1, 0, 1, 0);
+		glm::mat3 mat_2(4, 2, 9, 2, 0, 4, 1, 4, 2);
+		glm::mat3 res_mat = mat_1 * mat_2;
+
+		LOG_INFO("");
+		LOG_INFO("|{0:3} {1:3} {2:3}|", res_mat[0][0], res_mat[1][0], res_mat[2][0]);
+		LOG_INFO("|{0:3} {1:3} {2:3}|", res_mat[0][1], res_mat[1][1], res_mat[2][1]);
+		LOG_INFO("|{0:3} {1:3} {2:3}|", res_mat[0][2], res_mat[1][2], res_mat[2][2]);
+		LOG_INFO("");
 
 		return 0;
 	}
