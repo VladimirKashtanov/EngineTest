@@ -2,6 +2,7 @@
 #include "TestGLFWCore/Log.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/ShaderProgram.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/VertexBuffer.hpp"
+#include "TestGLFWCore/Rendering/OpenGL/VertexArray.hpp"
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -54,8 +55,7 @@ namespace TestGLFW
 	std::unique_ptr<ShaderProgram> p_shader_program;
 	std::unique_ptr<VertexBuffer>  p_points_vbo;
 	std::unique_ptr<VertexBuffer>  p_colors_vbo;
-	GLuint vao;
-
+	std::unique_ptr<VertexArray>   p_vao;
 
 	Window::Window(std::string title, const unsigned int width, const unsigned int height)
 		: m_data({ std::move(title), width, height })
@@ -155,20 +155,10 @@ namespace TestGLFW
 
 		p_points_vbo = std::make_unique<VertexBuffer>(points, sizeof(points));
 		p_colors_vbo = std::make_unique<VertexBuffer>(colors, sizeof(colors));
+		p_vao = std::make_unique<VertexArray>();
 
-		// генерация объекта массива вершин
-		glGenVertexArrays(1, &vao);
-		glBindVertexArray(vao);
-
-		// связывание координат вершин с процессором
-		glEnableVertexAttribArray(0);
-		p_points_vbo->bind();
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
-
-		// связывание цветов вершин с процессором
-		glEnableVertexAttribArray(1);
-		p_colors_vbo->bind();
-		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
+		p_vao->add_buffer(*p_points_vbo);
+		p_vao->add_buffer(*p_colors_vbo);
 
 		return 0;
 	}
@@ -192,7 +182,7 @@ namespace TestGLFW
 
 		// треугольник
 		p_shader_program->bind();
-		glBindVertexArray(vao);
+		p_vao->bind();
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 
 
