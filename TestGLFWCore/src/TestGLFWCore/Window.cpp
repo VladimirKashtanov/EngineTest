@@ -16,18 +16,10 @@ namespace TestGLFW
 {
 	static bool s_GLFW_initialize = false;
 
-	// координаты вершин треугольника
-	GLfloat points[] = {
-		 0.0f,  0.5f, 0.0f,
-		 0.5f, -0.5f, 0.0f,
-		-0.5f, -0.5f, 0.0f
-	};
-
-	// цвета вершин треугольника
-	GLfloat colors[] = {
-		1.0f, 0.0f, 0.0f,
-		0.0f, 1.0f, 0.0f,
-		0.0f, 0.0f, 1.0f
+	GLfloat positions_colors[] = {
+		 0.0f,  0.5f, 0.0f,		1.0f, 1.0f, 0.0f,
+		 0.5f, -0.5f, 0.0f,		0.0f, 1.0f, 1.0f,
+		-0.5f, -0.5f, 0.0f,		1.0f, 0.0f, 1.0f
 	};
 
 	// вершинный шейдер
@@ -53,8 +45,8 @@ namespace TestGLFW
 		"}\0";
 
 	std::unique_ptr<ShaderProgram> p_shader_program;
-	std::unique_ptr<VertexBuffer>  p_points_vbo;
-	std::unique_ptr<VertexBuffer>  p_colors_vbo;
+
+	std::unique_ptr<VertexBuffer>  p_positions_colors_vbo;
 	std::unique_ptr<VertexArray>   p_vao;
 
 	Window::Window(std::string title, const unsigned int width, const unsigned int height)
@@ -153,12 +145,17 @@ namespace TestGLFW
 			return false;
 		}
 
-		p_points_vbo = std::make_unique<VertexBuffer>(points, sizeof(points));
-		p_colors_vbo = std::make_unique<VertexBuffer>(colors, sizeof(colors));
-		p_vao = std::make_unique<VertexArray>();
+		// один буфер
+		BufferLayout buffer_layout_2vec3
+		{
+			ShaderDataType::Float3,
+			ShaderDataType::Float3
+		};
 
-		p_vao->add_buffer(*p_points_vbo);
-		p_vao->add_buffer(*p_colors_vbo);
+		p_vao = std::make_unique<VertexArray>();
+		p_positions_colors_vbo = std::make_unique<VertexBuffer>(positions_colors, sizeof(positions_colors), buffer_layout_2vec3);
+
+		p_vao->add_buffer(*p_positions_colors_vbo);
 
 		return 0;
 	}
@@ -180,12 +177,6 @@ namespace TestGLFW
 		glClear(GL_COLOR_BUFFER_BIT);
 
 
-		// треугольник
-		p_shader_program->bind();
-		p_vao->bind();
-		glDrawArrays(GL_TRIANGLES, 0, 3);
-
-
 		// окно demo ImGui
 		ImGuiIO& io = ImGui::GetIO();
 		io.DisplaySize.x = static_cast<float>(get_width());
@@ -195,12 +186,18 @@ namespace TestGLFW
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 
-		ImGui::ShowDemoWindow();
+		//ImGui::ShowDemoWindow();
 
 
 		// виджет для выбора цвета заливки фона окна opengl
 		ImGui::Begin("Background Color Window");
 		ImGui::ColorEdit4("Background Color", m_background_color);
+
+		// треугольник
+		p_shader_program->bind();
+		p_vao->bind();
+		glDrawArrays(GL_TRIANGLES, 0, 3);
+
 		ImGui::End();
 
 
