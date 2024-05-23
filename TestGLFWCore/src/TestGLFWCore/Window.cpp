@@ -6,11 +6,51 @@
 
 #include <imgui/imgui.h>
 #include <imgui/backends/imgui_impl_opengl3.h>
+#include <imgui/backends/imgui_impl_glfw.h>
 
 
 namespace TestGLFW
 {
 	static bool s_GLFW_initialize = false;
+
+	// координаты вершин треугольника
+	GLfloat points[] = {
+		 0.0f,  0.5f, 0.0f,
+		 0.5f, -0.5f, 0.0f,
+		-0.5f, -0.5f, 0.0f
+	};
+
+	// цвета вершин треугольника
+	GLfloat colors[] = {
+		1.0f, 0.0f, 0.0f,
+		0.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 1.0f
+	};
+
+	// вершинный шейдер
+	const char* vertex_shader =
+		"#version 460\n"
+		"layout(location = 0) in vec3 vertex_position;\n"
+		"layout(location = 1) in vec3 vertex_color;\n"
+		"out vec3 color;\n"
+		"void main()\n"
+		"{\n"
+		"	gl_Position = vec4(vertex_position, 1.0);\n"
+		"	color = vertex_color;\n"
+		"}\0";
+
+	// фрагментный шейдер
+	const char* fragment_shader =
+		"#version 460\n"
+		"in vec3 color;\n"
+		"out vec4 frag_color;\n"
+		"void main()\n"
+		"{\n"
+		"	frag_color = vec4(color, 1.0);\n"
+		"}\0";
+
+	GLuint shader_program;
+	GLuint vao;
 
 
 	Window::Window(std::string title, const unsigned int width, const unsigned int height)
@@ -18,9 +58,11 @@ namespace TestGLFW
 	{
 		int resultCode = init();
 
+		// »нициализаци€ ImGui
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 		ImGui_ImplOpenGL3_Init();
+		ImGui_ImplGlfw_InitForOpenGL(m_pWindow, true);
 	}
 
 
@@ -93,6 +135,59 @@ namespace TestGLFW
 				data.eventCallbackFn(event);
 			});
 
+		glfwSetFramebufferSizeCallback(m_pWindow,
+			[](GLFWwindow* pWindow, int width, int height)
+			{
+				glViewport(0, 0, width, height);
+			});
+
+
+		// компил€ци€ вершинного шейдера
+		GLuint vs = glCreateShader(GL_VERTEX_SHADER);
+		glShaderSource(vs, 1, &vertex_shader, nullptr);
+		glCompileShader(vs);
+
+		// компил€ци€ фрагментного шейдера
+		GLuint fs = glCreateShader(GL_FRAGMENT_SHADER);
+		glShaderSource(fs, 1, &fragment_shader, nullptr);
+		glCompileShader(fs);
+
+		// линкинг шейдерной программы
+		shader_program = glCreateProgram();
+		glAttachShader(shader_program, vs);
+		glAttachShader(shader_program, fs);
+		glLinkProgram(shader_program);
+
+		// удаление шейдеров
+		glDeleteShader(vs);
+		glDeleteShader(fs);
+
+		// генераци€ объекта вершинного буфера позиции
+		GLuint points_vbo = 0;
+		glGenBuffers(1, &points_vbo);
+		glBindBuffer(GL_ARRAY_BUFFER, points_vbo);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW);
+
+		// генераци€ объекта вершинного буфера цвета
+		GLuint colors_vbo = 0;
+		glGenBuffers(1, &colors_vbo);
+		glBindBuffer(GL_ARRAY_BUFFER, colors_vbo);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(colors), colors, GL_STATIC_DRAW);
+
+		// генераци€ объекта массива вершин
+		glGenVertexArrays(1, &vao);
+		glBindVertexArray(vao);
+
+		// св€зывание координат вершин с процессором
+		glEnableVertexAttribArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, points_vbo);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
+
+		// св€зывание цветов вершин с процессором
+		glEnableVertexAttribArray(1);
+		glBindBuffer(GL_ARRAY_BUFFER, colors_vbo);
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, nullptr);
+
 		return 0;
 	}
 
@@ -106,8 +201,17 @@ namespace TestGLFW
 
 	void Window::on_update()
 	{
-		glClearColor(1.0f, 0.0f, 0.0f, 0.0f);
+		glClearColor(m_background_color[0],
+			m_background_color[1],
+			m_background_color[2],
+			m_background_color[3]);
 		glClear(GL_COLOR_BUFFER_BIT);
+
+
+		// треугольник
+		glUseProgram(shader_program);
+		glBindVertexArray(vao);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
 
 
 		// окно ImGui
@@ -116,9 +220,17 @@ namespace TestGLFW
 		io.DisplaySize.y = static_cast<float>(get_height());
 
 		ImGui_ImplOpenGL3_NewFrame();
+		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
 
 		ImGui::ShowDemoWindow();
+
+
+		// виджет дл€ выбора цвета заливки фона окна opengl
+		ImGui::Begin("Background Color Window");
+		ImGui::ColorEdit4("Background Color", m_background_color);
+		ImGui::End();
+
 
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
