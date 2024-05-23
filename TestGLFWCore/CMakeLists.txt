@@ -11,12 +11,14 @@ set(ENGINE_PUBLIC_INCLUDES
 set(ENGINE_PRIVATE_INCLUDES
 	includes/TestGLFWCore/Window.hpp
 	src/TestGLFWCore/Rendering/OpenGL/ShaderProgram.hpp
+	src/TestGLFWCore/Rendering/OpenGL/VertexBuffer.hpp
 )
 
 set(ENGINE_PRIVATE_SOURCES
 	src/TestGLFWCore/Application.cpp
 	src/TestGLFWCore/Window.cpp
 	src/TestGLFWCore/Rendering/OpenGL/ShaderProgram.cpp
+	src/TestGLFWCore/Rendering/OpenGL/VertexBuffer.cpp
 )
 
 set(ENGINE_ALL_SOURCES
