@@ -3,6 +3,7 @@
 #include "TestGLFWCore/Rendering/OpenGL/ShaderProgram.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/VertexBuffer.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/VertexArray.hpp"
+#include "TestGLFWCore/Rendering/OpenGL/IndexBuffer.hpp"
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -17,9 +18,14 @@ namespace TestGLFW
 	static bool s_GLFW_initialize = false;
 
 	GLfloat positions_colors[] = {
-		 0.0f,  0.5f, 0.0f,		1.0f, 1.0f, 0.0f,
+		-0.5f, -0.5f, 0.0f,		1.0f, 1.0f, 0.0f,
 		 0.5f, -0.5f, 0.0f,		0.0f, 1.0f, 1.0f,
-		-0.5f, -0.5f, 0.0f,		1.0f, 0.0f, 1.0f
+		-0.5f,  0.5f, 0.0f,		1.0f, 0.0f, 1.0f,
+		 0.5f,  0.5f, 0.0f,		1.0f, 0.0f, 0.0f
+	};
+
+	GLuint indices[] = {
+		0, 1, 2, 3, 2, 1
 	};
 
 	// вершинный шейдер
@@ -45,8 +51,8 @@ namespace TestGLFW
 		"}\0";
 
 	std::unique_ptr<ShaderProgram> p_shader_program;
-
 	std::unique_ptr<VertexBuffer>  p_positions_colors_vbo;
+	std::unique_ptr<IndexBuffer>   p_index_buffer;
 	std::unique_ptr<VertexArray>   p_vao;
 
 	Window::Window(std::string title, const unsigned int width, const unsigned int height)
@@ -145,7 +151,6 @@ namespace TestGLFW
 			return false;
 		}
 
-		// один буфер
 		BufferLayout buffer_layout_2vec3
 		{
 			ShaderDataType::Float3,
@@ -153,9 +158,19 @@ namespace TestGLFW
 		};
 
 		p_vao = std::make_unique<VertexArray>();
-		p_positions_colors_vbo = std::make_unique<VertexBuffer>(positions_colors, sizeof(positions_colors), buffer_layout_2vec3);
+		p_positions_colors_vbo = std::make_unique<VertexBuffer>(
+			positions_colors,
+			sizeof(positions_colors),
+			buffer_layout_2vec3
+		);
 
-		p_vao->add_buffer(*p_positions_colors_vbo);
+		p_index_buffer = std::make_unique<IndexBuffer>(
+			indices,
+			sizeof(indices) / sizeof(GLuint)
+		);
+
+		p_vao->add_vertex_buffer(*p_positions_colors_vbo);
+		p_vao->set_index_buffer(*p_index_buffer);
 
 		return 0;
 	}
@@ -196,7 +211,7 @@ namespace TestGLFW
 		// треугольник
 		p_shader_program->bind();
 		p_vao->bind();
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(p_vao->get_indices_count()), GL_UNSIGNED_INT, nullptr);
 
 		ImGui::End();
 
