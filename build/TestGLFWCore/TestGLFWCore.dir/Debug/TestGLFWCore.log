@@ -1,9 +1,1 @@
-﻿  Application.cpp
-C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Window.hpp(17,8): warning C4099: TestGLFW::Window: имя типа, ранее отображенное с помощью "struct", теперь отображено с помощью "class"
-  (компиляция исходного файла "../../TestGLFWCore/src/TestGLFWCore/Application.cpp")
-  C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Window.hpp(17,8):
-   см. объявление "TestGLFW::Window"
-  
-  Window.cpp
-  Создание кода...
-  TestGLFWCore.vcxproj -> C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\build\TestGLFWCore\Debug\TestGLFWCore.lib
+﻿  TestGLFWCore.vcxproj -> C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\build\TestGLFWCore\Debug\TestGLFWCore.lib

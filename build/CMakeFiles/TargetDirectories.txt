@@ -4,6 +4,7 @@ C:/Users/Владимир/source/repos/ЛР_компьютерная_графи�
 C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWEditor/CMakeFiles/TestGLFWEditor.dir
 C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWEditor/CMakeFiles/INSTALL.dir
 C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/CMakeFiles/TestGLFWCore.dir
+C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/CMakeFiles/ImGui.dir
 C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/CMakeFiles/INSTALL.dir
 C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/glfw/CMakeFiles/uninstall.dir
 C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/TestGLFWCore/glfw/CMakeFiles/INSTALL.dir

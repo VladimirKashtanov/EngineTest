@@ -18,13 +18,13 @@ events:
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
       Compiler:  
-      Build flags: 
+      Build flags: /DWIN32;/D_WINDOWS;/W3
       Id flags:  
       
       The output was:
       0
       ‚ҐабЁп MSBuild 17.9.8+b34f75857 ¤«п .NET Framework
-      ‘Ў®аЄ  ­ з в  22.05.2024 18:22:00.
+      ‘Ў®аЄ  ­ з в  23.05.2024 13:01:59.
       
       Џа®ҐЄв "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\3.29.3\\CompilerIdC\\CompilerIdC.vcxproj" ў г§«Ґ 1 (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
       PrepareForBuild:
@@ -53,7 +53,7 @@ events:
           ЏаҐ¤гЇаҐ¦¤Ґ­Ё©: 0
           ЋиЁЎ®Є: 0
       
-      Џа®и«® ўаҐ¬Ґ­Ё 00:00:00.81
+      Џа®и«® ўаҐ¬Ґ­Ё 00:00:00.42
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -73,13 +73,13 @@ events:
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler:  
-      Build flags: 
+      Build flags: /DWIN32;/D_WINDOWS;/W3;/GR;/EHsc
       Id flags:  
       
       The output was:
       0
       ‚ҐабЁп MSBuild 17.9.8+b34f75857 ¤«п .NET Framework
-      ‘Ў®аЄ  ­ з в  22.05.2024 18:22:01.
+      ‘Ў®аЄ  ­ з в  23.05.2024 13:02:00.
       
       Џа®ҐЄв "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\3.29.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" ў г§«Ґ 1 (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
       PrepareForBuild:
@@ -108,7 +108,7 @@ events:
           ЏаҐ¤гЇаҐ¦¤Ґ­Ё©: 0
           ЋиЁЎ®Є: 0
       
-      Џа®и«® ўаҐ¬Ґ­Ё 00:00:00.79
+      Џа®и«® ўаҐ¬Ґ­Ё 00:00:00.43
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -127,8 +127,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-zrquya"
-      binary: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-zrquya"
+      source: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-1oljf4"
+      binary: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-1oljf4"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -137,40 +137,40 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-zrquya'
+        Change Dir: 'C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-1oljf4'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d06a1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_28721.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         ‚ҐабЁп MSBuild 17.9.8+b34f75857 ¤«п .NET Framework
-        ‘Ў®аЄ  ­ з в  22.05.2024 18:22:02.
+        ‘Ў®аЄ  ­ з в  23.05.2024 13:02:00.
         
-        Џа®ҐЄв "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zrquya\\cmTC_d06a1.vcxproj" ў г§«Ґ 1 (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
+        Џа®ҐЄв "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1oljf4\\cmTC_28721.vcxproj" ў г§«Ґ 1 (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
         PrepareForBuild:
-          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_d06a1.dir\\Debug\\".
+          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_28721.dir\\Debug\\".
           ‘вагЄвгаЁа®ў ­­л© ўлў®¤ ўЄ«озҐ­. ”®а¬ вЁа®ў ­ЁҐ ¤Ё Ј­®бвЁЄЁ Є®¬ЇЁ«пв®а  Ўг¤Ґв ®ва ¦ вм ЁҐа аеЁо ®иЁЎ®Є. Џ®¤а®Ў­ҐҐ б¬. https://aka.ms/cpp/structured-output.
-          ‘®§¤ ­ЁҐ Є в «®Ј  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zrquya\\Debug\\".
-          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_d06a1.dir\\Debug\\cmTC_d06a1.tlog\\".
+          ‘®§¤ ­ЁҐ Є в «®Ј  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1oljf4\\Debug\\".
+          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_28721.dir\\Debug\\cmTC_28721.tlog\\".
         InitializeBuildStatus:
-          ‘®§¤ ­ЁҐ "cmTC_d06a1.dir\\Debug\\cmTC_d06a1.tlog\\unsuccessfulbuild", в Є Є Є Ўл«® § ¤ ­® "AlwaysCreate".
-          ЋЎа йҐ­ЁҐ Є "cmTC_d06a1.dir\\Debug\\cmTC_d06a1.tlog\\unsuccessfulbuild".
+          ‘®§¤ ­ЁҐ "cmTC_28721.dir\\Debug\\cmTC_28721.tlog\\unsuccessfulbuild", в Є Є Є Ўл«® § ¤ ­® "AlwaysCreate".
+          ЋЎа йҐ­ЁҐ Є "cmTC_28721.dir\\Debug\\cmTC_28721.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d06a1.dir\\Debug\\\\" /Fd"cmTC_d06a1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_28721.dir\\Debug\\\\" /Fd"cmTC_28721.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
           ЋЇвЁ¬Ё§ЁагойЁ© Є®¬ЇЁ«пв®а Microsoft (R) C/C++ ўҐабЁЁ 19.39.33523 ¤«п x64
           (C) Љ®аЇ®а жЁп Њ ©Єа®б®дв (Microsoft Corporation).  ‚бҐ Їа ў  § йЁйҐ­л.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d06a1.dir\\Debug\\\\" /Fd"cmTC_d06a1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_28721.dir\\Debug\\\\" /Fd"cmTC_28721.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zrquya\\Debug\\cmTC_d06a1.exe" /INCREMENTAL /ILK:"cmTC_d06a1.dir\\Debug\\cmTC_d06a1.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/‚« ¤Ё¬Ёа/source/repos/‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ /GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-zrquya/Debug/cmTC_d06a1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/‚« ¤Ё¬Ёа/source/repos/‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ /GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-zrquya/Debug/cmTC_d06a1.lib" /MACHINE:X64  /machine:x64 cmTC_d06a1.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_d06a1.vcxproj -> C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zrquya\\Debug\\cmTC_d06a1.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1oljf4\\Debug\\cmTC_28721.exe" /INCREMENTAL /ILK:"cmTC_28721.dir\\Debug\\cmTC_28721.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/‚« ¤Ё¬Ёа/source/repos/‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ /GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-1oljf4/Debug/cmTC_28721.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/‚« ¤Ё¬Ёа/source/repos/‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ /GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-1oljf4/Debug/cmTC_28721.lib" /MACHINE:X64  /machine:x64 cmTC_28721.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_28721.vcxproj -> C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1oljf4\\Debug\\cmTC_28721.exe
         FinalizeBuildStatus:
-          ” ©« "cmTC_d06a1.dir\\Debug\\cmTC_d06a1.tlog\\unsuccessfulbuild" г¤ «пҐвбп.
-          ЋЎа йҐ­ЁҐ Є "cmTC_d06a1.dir\\Debug\\cmTC_d06a1.tlog\\cmTC_d06a1.lastbuildstate".
-        ‘Ў®аЄ  Їа®ҐЄв  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-zrquya\\cmTC_d06a1.vcxproj" § ўҐаиҐ­  (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
+          ” ©« "cmTC_28721.dir\\Debug\\cmTC_28721.tlog\\unsuccessfulbuild" г¤ «пҐвбп.
+          ЋЎа йҐ­ЁҐ Є "cmTC_28721.dir\\Debug\\cmTC_28721.tlog\\cmTC_28721.lastbuildstate".
+        ‘Ў®аЄ  Їа®ҐЄв  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-1oljf4\\cmTC_28721.vcxproj" § ўҐаиҐ­  (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
         
         ‘Ў®аЄ  гбЇҐи­® § ўҐаиҐ­ .
             ЏаҐ¤гЇаҐ¦¤Ґ­Ё©: 0
             ЋиЁЎ®Є: 0
         
-        Џа®и«® ўаҐ¬Ґ­Ё 00:00:00.71
+        Џа®и«® ўаҐ¬Ґ­Ё 00:00:00.41
         
       exitCode: 0
   -
@@ -210,8 +210,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-h2aiji"
-      binary: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-h2aiji"
+      source: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-dcfbw6"
+      binary: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-dcfbw6"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -221,40 +221,40 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-h2aiji'
+        Change Dir: 'C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-dcfbw6'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e00b1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6e621.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         ‚ҐабЁп MSBuild 17.9.8+b34f75857 ¤«п .NET Framework
-        ‘Ў®аЄ  ­ з в  22.05.2024 18:22:03.
+        ‘Ў®аЄ  ­ з в  23.05.2024 13:02:01.
         
-        Џа®ҐЄв "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h2aiji\\cmTC_e00b1.vcxproj" ў г§«Ґ 1 (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
+        Џа®ҐЄв "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dcfbw6\\cmTC_6e621.vcxproj" ў г§«Ґ 1 (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
         PrepareForBuild:
-          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_e00b1.dir\\Debug\\".
+          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_6e621.dir\\Debug\\".
           ‘вагЄвгаЁа®ў ­­л© ўлў®¤ ўЄ«озҐ­. ”®а¬ вЁа®ў ­ЁҐ ¤Ё Ј­®бвЁЄЁ Є®¬ЇЁ«пв®а  Ўг¤Ґв ®ва ¦ вм ЁҐа аеЁо ®иЁЎ®Є. Џ®¤а®Ў­ҐҐ б¬. https://aka.ms/cpp/structured-output.
-          ‘®§¤ ­ЁҐ Є в «®Ј  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h2aiji\\Debug\\".
-          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_e00b1.dir\\Debug\\cmTC_e00b1.tlog\\".
+          ‘®§¤ ­ЁҐ Є в «®Ј  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dcfbw6\\Debug\\".
+          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_6e621.dir\\Debug\\cmTC_6e621.tlog\\".
         InitializeBuildStatus:
-          ‘®§¤ ­ЁҐ "cmTC_e00b1.dir\\Debug\\cmTC_e00b1.tlog\\unsuccessfulbuild", в Є Є Є Ўл«® § ¤ ­® "AlwaysCreate".
-          ЋЎа йҐ­ЁҐ Є "cmTC_e00b1.dir\\Debug\\cmTC_e00b1.tlog\\unsuccessfulbuild".
+          ‘®§¤ ­ЁҐ "cmTC_6e621.dir\\Debug\\cmTC_6e621.tlog\\unsuccessfulbuild", в Є Є Є Ўл«® § ¤ ­® "AlwaysCreate".
+          ЋЎа йҐ­ЁҐ Є "cmTC_6e621.dir\\Debug\\cmTC_6e621.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e00b1.dir\\Debug\\\\" /Fd"cmTC_e00b1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6e621.dir\\Debug\\\\" /Fd"cmTC_6e621.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
           ЋЇвЁ¬Ё§ЁагойЁ© Є®¬ЇЁ«пв®а Microsoft (R) C/C++ ўҐабЁЁ 19.39.33523 ¤«п x64
           (C) Љ®аЇ®а жЁп Њ ©Єа®б®дв (Microsoft Corporation).  ‚бҐ Їа ў  § йЁйҐ­л.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e00b1.dir\\Debug\\\\" /Fd"cmTC_e00b1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_6e621.dir\\Debug\\\\" /Fd"cmTC_6e621.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.29\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h2aiji\\Debug\\cmTC_e00b1.exe" /INCREMENTAL /ILK:"cmTC_e00b1.dir\\Debug\\cmTC_e00b1.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/‚« ¤Ё¬Ёа/source/repos/‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ /GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-h2aiji/Debug/cmTC_e00b1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/‚« ¤Ё¬Ёа/source/repos/‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ /GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-h2aiji/Debug/cmTC_e00b1.lib" /MACHINE:X64  /machine:x64 cmTC_e00b1.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_e00b1.vcxproj -> C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h2aiji\\Debug\\cmTC_e00b1.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dcfbw6\\Debug\\cmTC_6e621.exe" /INCREMENTAL /ILK:"cmTC_6e621.dir\\Debug\\cmTC_6e621.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/‚« ¤Ё¬Ёа/source/repos/‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ /GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-dcfbw6/Debug/cmTC_6e621.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/‚« ¤Ё¬Ёа/source/repos/‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ /GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-dcfbw6/Debug/cmTC_6e621.lib" /MACHINE:X64  /machine:x64 cmTC_6e621.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_6e621.vcxproj -> C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dcfbw6\\Debug\\cmTC_6e621.exe
         FinalizeBuildStatus:
-          ” ©« "cmTC_e00b1.dir\\Debug\\cmTC_e00b1.tlog\\unsuccessfulbuild" г¤ «пҐвбп.
-          ЋЎа йҐ­ЁҐ Є "cmTC_e00b1.dir\\Debug\\cmTC_e00b1.tlog\\cmTC_e00b1.lastbuildstate".
-        ‘Ў®аЄ  Їа®ҐЄв  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-h2aiji\\cmTC_e00b1.vcxproj" § ўҐаиҐ­  (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
+          ” ©« "cmTC_6e621.dir\\Debug\\cmTC_6e621.tlog\\unsuccessfulbuild" г¤ «пҐвбп.
+          ЋЎа йҐ­ЁҐ Є "cmTC_6e621.dir\\Debug\\cmTC_6e621.tlog\\cmTC_6e621.lastbuildstate".
+        ‘Ў®аЄ  Їа®ҐЄв  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-dcfbw6\\cmTC_6e621.vcxproj" § ўҐаиҐ­  (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
         
         ‘Ў®аЄ  гбЇҐи­® § ўҐаиҐ­ .
             ЏаҐ¤гЇаҐ¦¤Ґ­Ё©: 0
             ЋиЁЎ®Є: 0
         
-        Џа®и«® ўаҐ¬Ґ­Ё 00:00:00.72
+        Џа®и«® ўаҐ¬Ґ­Ё 00:00:00.42
         
       exitCode: 0
   -
@@ -285,180 +285,4 @@ events:
       Running the CXX compiler's linker: "C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/bin/HostX64/x64/link.exe" "-v"
       Microsoft (R) Incremental Linker Version 14.39.33523.0
       Copyright (C) Microsoft Corporation.  All rights reserved.
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
-      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
-      - "C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
-      - "C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
-      - "external/glfw/CMakeLists.txt:60 (find_package)"
-    checks:
-      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
-    directories:
-      source: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-xlw78j"
-      binary: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-xlw78j"
-    cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
-      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      CMAKE_MODULE_PATH: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/external/glfw/CMake/modules"
-    buildResult:
-      variable: "CMAKE_HAVE_LIBC_PTHREAD"
-      cached: true
-      stdout: |
-        Change Dir: 'C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-xlw78j'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_70a83.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        ‚ҐабЁп MSBuild 17.9.8+b34f75857 ¤«п .NET Framework
-        ‘Ў®аЄ  ­ з в  22.05.2024 18:22:05.
-        
-        Џа®ҐЄв "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xlw78j\\cmTC_70a83.vcxproj" ў г§«Ґ 1 (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
-        PrepareForBuild:
-          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_70a83.dir\\Debug\\".
-          ‘вагЄвгаЁа®ў ­­л© ўлў®¤ ўЄ«озҐ­. ”®а¬ вЁа®ў ­ЁҐ ¤Ё Ј­®бвЁЄЁ Є®¬ЇЁ«пв®а  Ўг¤Ґв ®ва ¦ вм ЁҐа аеЁо ®иЁЎ®Є. Џ®¤а®Ў­ҐҐ б¬. https://aka.ms/cpp/structured-output.
-          ‘®§¤ ­ЁҐ Є в «®Ј  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xlw78j\\Debug\\".
-          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_70a83.dir\\Debug\\cmTC_70a83.tlog\\".
-        InitializeBuildStatus:
-          ‘®§¤ ­ЁҐ "cmTC_70a83.dir\\Debug\\cmTC_70a83.tlog\\unsuccessfulbuild", в Є Є Є Ўл«® § ¤ ­® "AlwaysCreate".
-          ЋЎа йҐ­ЁҐ Є "cmTC_70a83.dir\\Debug\\cmTC_70a83.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_70a83.dir\\Debug\\\\" /Fd"cmTC_70a83.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xlw78j\\src.c"
-          ЋЇвЁ¬Ё§ЁагойЁ© Є®¬ЇЁ«пв®а Microsoft (R) C/C++ ўҐабЁЁ 19.39.33523 ¤«п x64
-          (C) Љ®аЇ®а жЁп Њ ©Єа®б®дв (Microsoft Corporation).  ‚бҐ Їа ў  § йЁйҐ­л.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_70a83.dir\\Debug\\\\" /Fd"cmTC_70a83.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xlw78j\\src.c"
-          src.c
-        C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xlw78j\\src.c(1,10): error C1083: ЌҐ г¤ Ґвбп ®вЄалвм д ©« ўЄ«озҐ­ЁҐ: pthread.h: No such file or directory, [C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xlw78j\\cmTC_70a83.vcxproj]
-        ‘Ў®аЄ  Їа®ҐЄв  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xlw78j\\cmTC_70a83.vcxproj" § ўҐаиҐ­  (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо) б ®иЁЎЄ®©.
-        
-        ЋиЁЎЄ  бЎ®аЄЁ.
-        
-        "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xlw78j\\cmTC_70a83.vcxproj" (жҐ«Ґў®© ®ЎкҐЄв Ї® г¬®«з ­Ёо) (1) ->
-        (–Ґ«Ґў®© ®ЎкҐЄв ClCompile) -> 
-          C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xlw78j\\src.c(1,10): error C1083: ЌҐ г¤ Ґвбп ®вЄалвм д ©« ўЄ«озҐ­ЁҐ: pthread.h: No such file or directory, [C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-xlw78j\\cmTC_70a83.vcxproj]
-        
-            ЏаҐ¤гЇаҐ¦¤Ґ­Ё©: 0
-            ЋиЁЎ®Є: 1
-        
-        Џа®и«® ўаҐ¬Ґ­Ё 00:00:00.57
-        
-      exitCode: 1
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
-      - "C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
-      - "C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake:175 (_threads_check_lib)"
-      - "external/glfw/CMakeLists.txt:60 (find_package)"
-    checks:
-      - "Looking for pthread_create in pthreads"
-    directories:
-      source: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-y35xl9"
-      binary: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-y35xl9"
-    cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
-      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      CMAKE_MODULE_PATH: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/external/glfw/CMake/modules"
-    buildResult:
-      variable: "CMAKE_HAVE_PTHREADS_CREATE"
-      cached: true
-      stdout: |
-        Change Dir: 'C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-y35xl9'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9596a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        ‚ҐабЁп MSBuild 17.9.8+b34f75857 ¤«п .NET Framework
-        ‘Ў®аЄ  ­ з в  22.05.2024 18:22:06.
-        
-        Џа®ҐЄв "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y35xl9\\cmTC_9596a.vcxproj" ў г§«Ґ 1 (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
-        PrepareForBuild:
-          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_9596a.dir\\Debug\\".
-          ‘вагЄвгаЁа®ў ­­л© ўлў®¤ ўЄ«озҐ­. ”®а¬ вЁа®ў ­ЁҐ ¤Ё Ј­®бвЁЄЁ Є®¬ЇЁ«пв®а  Ўг¤Ґв ®ва ¦ вм ЁҐа аеЁо ®иЁЎ®Є. Џ®¤а®Ў­ҐҐ б¬. https://aka.ms/cpp/structured-output.
-          ‘®§¤ ­ЁҐ Є в «®Ј  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y35xl9\\Debug\\".
-          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_9596a.dir\\Debug\\cmTC_9596a.tlog\\".
-        InitializeBuildStatus:
-          ‘®§¤ ­ЁҐ "cmTC_9596a.dir\\Debug\\cmTC_9596a.tlog\\unsuccessfulbuild", в Є Є Є Ўл«® § ¤ ­® "AlwaysCreate".
-          ЋЎа йҐ­ЁҐ Є "cmTC_9596a.dir\\Debug\\cmTC_9596a.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9596a.dir\\Debug\\\\" /Fd"cmTC_9596a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y35xl9\\CheckFunctionExists.c"
-          ЋЇвЁ¬Ё§ЁагойЁ© Є®¬ЇЁ«пв®а Microsoft (R) C/C++ ўҐабЁЁ 19.39.33523 ¤«п x64
-          (C) Љ®аЇ®а жЁп Њ ©Єа®б®дв (Microsoft Corporation).  ‚бҐ Їа ў  § йЁйҐ­л.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9596a.dir\\Debug\\\\" /Fd"cmTC_9596a.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y35xl9\\CheckFunctionExists.c"
-          CheckFunctionExists.c
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y35xl9\\Debug\\cmTC_9596a.exe" /INCREMENTAL /ILK:"cmTC_9596a.dir\\Debug\\cmTC_9596a.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/‚« ¤Ё¬Ёа/source/repos/‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ /GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-y35xl9/Debug/cmTC_9596a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/‚« ¤Ё¬Ёа/source/repos/‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ /GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-y35xl9/Debug/cmTC_9596a.lib" /MACHINE:X64  /machine:x64 cmTC_9596a.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: ­Ґ г¤ Ґвбп ®вЄалвм д ©« "pthreads.lib" [C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y35xl9\\cmTC_9596a.vcxproj]
-        ‘Ў®аЄ  Їа®ҐЄв  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y35xl9\\cmTC_9596a.vcxproj" § ўҐаиҐ­  (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо) б ®иЁЎЄ®©.
-        
-        ЋиЁЎЄ  бЎ®аЄЁ.
-        
-        "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y35xl9\\cmTC_9596a.vcxproj" (жҐ«Ґў®© ®ЎкҐЄв Ї® г¬®«з ­Ёо) (1) ->
-        (–Ґ«Ґў®© ®ЎкҐЄв Link) -> 
-          LINK : fatal error LNK1104: ­Ґ г¤ Ґвбп ®вЄалвм д ©« "pthreads.lib" [C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-y35xl9\\cmTC_9596a.vcxproj]
-        
-            ЏаҐ¤гЇаҐ¦¤Ґ­Ё©: 0
-            ЋиЁЎ®Є: 1
-        
-        Џа®и«® ўаҐ¬Ґ­Ё 00:00:00.60
-        
-      exitCode: 1
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "C:/Program Files/CMake/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
-      - "C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
-      - "C:/Program Files/CMake/share/cmake-3.29/Modules/FindThreads.cmake:176 (_threads_check_lib)"
-      - "external/glfw/CMakeLists.txt:60 (find_package)"
-    checks:
-      - "Looking for pthread_create in pthread"
-    directories:
-      source: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-ex26vn"
-      binary: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-ex26vn"
-    cmakeVariables:
-      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
-      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
-      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
-      CMAKE_MODULE_PATH: "C:/Users/\u0412\u043b\u0430\u0434\u0438\u043c\u0438\u0440/source/repos/\u041b\u0420_\u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u043d\u0430\u044f_\u0433\u0440\u0430\u0444\u0438\u043a\u0430/GLFWprojects/TestGLFW/external/glfw/CMake/modules"
-    buildResult:
-      variable: "CMAKE_HAVE_PTHREAD_CREATE"
-      cached: true
-      stdout: |
-        Change Dir: 'C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-ex26vn'
-        
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8c4fb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
-        ‚ҐабЁп MSBuild 17.9.8+b34f75857 ¤«п .NET Framework
-        ‘Ў®аЄ  ­ з в  22.05.2024 18:22:06.
-        
-        Џа®ҐЄв "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ex26vn\\cmTC_8c4fb.vcxproj" ў г§«Ґ 1 (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо).
-        PrepareForBuild:
-          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_8c4fb.dir\\Debug\\".
-          ‘вагЄвгаЁа®ў ­­л© ўлў®¤ ўЄ«озҐ­. ”®а¬ вЁа®ў ­ЁҐ ¤Ё Ј­®бвЁЄЁ Є®¬ЇЁ«пв®а  Ўг¤Ґв ®ва ¦ вм ЁҐа аеЁо ®иЁЎ®Є. Џ®¤а®Ў­ҐҐ б¬. https://aka.ms/cpp/structured-output.
-          ‘®§¤ ­ЁҐ Є в «®Ј  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ex26vn\\Debug\\".
-          ‘®§¤ ­ЁҐ Є в «®Ј  "cmTC_8c4fb.dir\\Debug\\cmTC_8c4fb.tlog\\".
-        InitializeBuildStatus:
-          ‘®§¤ ­ЁҐ "cmTC_8c4fb.dir\\Debug\\cmTC_8c4fb.tlog\\unsuccessfulbuild", в Є Є Є Ўл«® § ¤ ­® "AlwaysCreate".
-          ЋЎа йҐ­ЁҐ Є "cmTC_8c4fb.dir\\Debug\\cmTC_8c4fb.tlog\\unsuccessfulbuild".
-        ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8c4fb.dir\\Debug\\\\" /Fd"cmTC_8c4fb.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ex26vn\\CheckFunctionExists.c"
-          ЋЇвЁ¬Ё§ЁагойЁ© Є®¬ЇЁ«пв®а Microsoft (R) C/C++ ўҐабЁЁ 19.39.33523 ¤«п x64
-          (C) Љ®аЇ®а жЁп Њ ©Єа®б®дв (Microsoft Corporation).  ‚бҐ Їа ў  § йЁйҐ­л.
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8c4fb.dir\\Debug\\\\" /Fd"cmTC_8c4fb.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ex26vn\\CheckFunctionExists.c"
-          CheckFunctionExists.c
-        Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.39.33519\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ex26vn\\Debug\\cmTC_8c4fb.exe" /INCREMENTAL /ILK:"cmTC_8c4fb.dir\\Debug\\cmTC_8c4fb.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/‚« ¤Ё¬Ёа/source/repos/‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ /GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-ex26vn/Debug/cmTC_8c4fb.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/‚« ¤Ё¬Ёа/source/repos/‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ /GLFWprojects/TestGLFW/build/CMakeFiles/CMakeScratch/TryCompile-ex26vn/Debug/cmTC_8c4fb.lib" /MACHINE:X64  /machine:x64 cmTC_8c4fb.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: ­Ґ г¤ Ґвбп ®вЄалвм д ©« "pthread.lib" [C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ex26vn\\cmTC_8c4fb.vcxproj]
-        ‘Ў®аЄ  Їа®ҐЄв  "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ex26vn\\cmTC_8c4fb.vcxproj" § ўҐаиҐ­  (жҐ«ҐўлҐ ®ЎкҐЄвл Ї® г¬®«з ­Ёо) б ®иЁЎЄ®©.
-        
-        ЋиЁЎЄ  бЎ®аЄЁ.
-        
-        "C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ex26vn\\cmTC_8c4fb.vcxproj" (жҐ«Ґў®© ®ЎкҐЄв Ї® г¬®«з ­Ёо) (1) ->
-        (–Ґ«Ґў®© ®ЎкҐЄв Link) -> 
-          LINK : fatal error LNK1104: ­Ґ г¤ Ґвбп ®вЄалвм д ©« "pthread.lib" [C:\\Users\\‚« ¤Ё¬Ёа\\source\\repos\\‹ђ_Є®¬ЇмовҐа­ п_Ја дЁЄ \\GLFWprojects\\TestGLFW\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ex26vn\\cmTC_8c4fb.vcxproj]
-        
-            ЏаҐ¤гЇаҐ¦¤Ґ­Ё©: 0
-            ЋиЁЎ®Є: 1
-        
-        Џа®и«® ўаҐ¬Ґ­Ё 00:00:00.58
-        
-      exitCode: 1
 ...

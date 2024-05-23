@@ -36,7 +36,7 @@ namespace TestGLFW
 		m_event_dispatcher.add_event_listener<EventWindowClose>(
 			[&](EventWindowClose& event)
 			{
-				LOG_INFO("[WindowClose]");
+				LOG_INFO("[WindowClosed]");
 				m_bCloseWindow = true;
 			});
 

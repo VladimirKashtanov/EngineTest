@@ -116,7 +116,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\TestGLFWCore\Debug\TestGLFWCore.lib;..\TestGLFWCore\glfw\src\Debug\glfw3.lib;..\TestGLFWCore\spdlog\Debug\spdlogd.lib;..\TestGLFWCore\glad\Debug\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\TestGLFWCore\Debug\TestGLFWCore.lib;..\TestGLFWCore\spdlog\Debug\spdlogd.lib;..\TestGLFWCore\Debug\ImGui.lib;..\TestGLFWCore\glfw\src\Debug\glfw3.lib;..\TestGLFWCore\glad\Debug\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -161,7 +161,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\TestGLFWCore\Release\TestGLFWCore.lib;..\TestGLFWCore\glfw\src\Release\glfw3.lib;..\TestGLFWCore\spdlog\Release\spdlog.lib;..\TestGLFWCore\glad\Release\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\TestGLFWCore\Release\TestGLFWCore.lib;..\TestGLFWCore\spdlog\Release\spdlog.lib;..\TestGLFWCore\Release\ImGui.lib;..\TestGLFWCore\glfw\src\Release\glfw3.lib;..\TestGLFWCore\glad\Release\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -206,7 +206,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\TestGLFWCore\MinSizeRel\TestGLFWCore.lib;..\TestGLFWCore\glfw\src\MinSizeRel\glfw3.lib;..\TestGLFWCore\spdlog\MinSizeRel\spdlog.lib;..\TestGLFWCore\glad\MinSizeRel\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\TestGLFWCore\MinSizeRel\TestGLFWCore.lib;..\TestGLFWCore\spdlog\MinSizeRel\spdlog.lib;..\TestGLFWCore\MinSizeRel\ImGui.lib;..\TestGLFWCore\glfw\src\MinSizeRel\glfw3.lib;..\TestGLFWCore\glad\MinSizeRel\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -250,7 +250,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\TestGLFWCore\RelWithDebInfo\TestGLFWCore.lib;..\TestGLFWCore\glfw\src\RelWithDebInfo\glfw3.lib;..\TestGLFWCore\spdlog\RelWithDebInfo\spdlog.lib;..\TestGLFWCore\glad\RelWithDebInfo\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>..\TestGLFWCore\RelWithDebInfo\TestGLFWCore.lib;..\TestGLFWCore\spdlog\RelWithDebInfo\spdlog.lib;..\TestGLFWCore\RelWithDebInfo\ImGui.lib;..\TestGLFWCore\glfw\src\RelWithDebInfo\glfw3.lib;..\TestGLFWCore\glad\RelWithDebInfo\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -329,6 +329,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\build\TestGLFWCore\ImGui.vcxproj">
+      <Project>{5442D348-8303-3E9E-AC2A-D450F2A0D632}</Project>
+      <Name>ImGui</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\build\TestGLFWCore\TestGLFWCore.vcxproj">
       <Project>{DEEE17F7-1227-3B0C-AE29-E65BE5DE878D}</Project>
