@@ -12,7 +12,8 @@
 #include <imgui/backends/imgui_impl_opengl3.h>
 #include <imgui/backends/imgui_impl_glfw.h>
 
-#include <glm/mat3x3.hpp>
+#include <glm/mat4x4.hpp>
+#include <glm/trigonometric.hpp>
 
 
 namespace TestGLFW
@@ -31,31 +32,37 @@ namespace TestGLFW
 	};
 
 	// вершинный шейдер
-	const char* vertex_shader =
-		"#version 460\n"
-		"layout(location = 0) in vec3 vertex_position;\n"
-		"layout(location = 1) in vec3 vertex_color;\n"
-		"out vec3 color;\n"
-		"void main()\n"
-		"{\n"
-		"	gl_Position = vec4(vertex_position, 1.0);\n"
-		"	color = vertex_color;\n"
-		"}\0";
+	const char* vertex_shader = R"(
+		#version 460
+		layout(location = 0) in vec3 vertex_position;
+		layout(location = 1) in vec3 vertex_color;
+		uniform mat4 model_matrix;
+		out vec3 color;
+		void main()
+		{
+			gl_Position = model_matrix * vec4(vertex_position, 1.0);
+			color = vertex_color;
+		}
+	)";
 
 	// фрагментный шейдер
-	const char* fragment_shader =
-		"#version 460\n"
-		"in vec3 color;\n"
-		"out vec4 frag_color;\n"
-		"void main()\n"
-		"{\n"
-		"	frag_color = vec4(color, 1.0);\n"
-		"}\0";
+	const char* fragment_shader = R"(
+		#version 460
+		in vec3 color;
+		out vec4 frag_color;
+		void main()
+		{
+			frag_color = vec4(color, 1.0);
+		}
+	)";
 
 	std::unique_ptr<ShaderProgram> p_shader_program;
 	std::unique_ptr<VertexBuffer>  p_positions_colors_vbo;
 	std::unique_ptr<IndexBuffer>   p_index_buffer;
 	std::unique_ptr<VertexArray>   p_vao;
+	float scale[3] = { 1.0f, 1.0f, 1.0f };
+	float rotate = 0.0f;
+	float translate[3] = { 0.0f, 0.0f, 1.0f };
 
 	Window::Window(std::string title, const unsigned int width, const unsigned int height)
 		: m_data({ std::move(title), width, height })
@@ -174,17 +181,6 @@ namespace TestGLFW
 		p_vao->add_vertex_buffer(*p_positions_colors_vbo);
 		p_vao->set_index_buffer(*p_index_buffer);
 
-
-		glm::mat3 mat_1(4, 0, 0, 2, 8, 1, 0, 1, 0);
-		glm::mat3 mat_2(4, 2, 9, 2, 0, 4, 1, 4, 2);
-		glm::mat3 res_mat = mat_1 * mat_2;
-
-		LOG_INFO("");
-		LOG_INFO("|{0:3} {1:3} {2:3}|", res_mat[0][0], res_mat[1][0], res_mat[2][0]);
-		LOG_INFO("|{0:3} {1:3} {2:3}|", res_mat[0][1], res_mat[1][1], res_mat[2][1]);
-		LOG_INFO("|{0:3} {1:3} {2:3}|", res_mat[0][2], res_mat[1][2], res_mat[2][2]);
-		LOG_INFO("");
-
 		return 0;
 	}
 
@@ -220,9 +216,37 @@ namespace TestGLFW
 		// виджет для выбора цвета заливки фона окна opengl
 		ImGui::Begin("Background Color Window");
 		ImGui::ColorEdit4("Background Color", m_background_color);
+		ImGui::SliderFloat3("scale", scale, 0.0f, 2.0f);
+		ImGui::SliderFloat("rotate", &rotate, 0.0f, 360.0f);
+		ImGui::SliderFloat3("translate", translate, -0.5f, 0.5f);
 
 		// треугольник
 		p_shader_program->bind();
+
+
+		glm::mat4 scale_matrix(scale[0], 0,		   0,		 0,
+							   0,		 scale[1], 0,		 0,
+							   0,		 0,		   scale[2], 0,
+							   0,		 0,		   0,		 1
+		);
+
+		float rotate_in_rad = glm::radians(rotate);
+		glm::mat4 rotate_matrix(cos(rotate_in_rad), sin(rotate_in_rad), 0, 0,
+							   -sin(rotate_in_rad), cos(rotate_in_rad), 0, 0,
+								0,					0,					1, 0,
+								0,					0,					0, 1
+		);
+
+		glm::mat4 translate_matrix(1,				0,				0,				0,
+								   0,				1,				0,				0,
+							   	   0,				0,				1,				0,
+								   translate[0],	translate[1],	translate[2],	1
+		);
+
+		glm::mat4 model_matrix = translate_matrix * rotate_matrix * scale_matrix;
+
+		p_shader_program->setMatrix4("model_matrix", model_matrix);
+
 		p_vao->bind();
 		glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(p_vao->get_indices_count()), GL_UNSIGNED_INT, nullptr);
 
