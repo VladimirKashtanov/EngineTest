@@ -1,5 +1,6 @@
 #include "TestGLFWCore/Window.hpp"
 #include "TestGLFWCore/Log.hpp"
+#include "TestGLFWCore/Rendering/OpenGL/ShaderProgram.hpp"
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -49,7 +50,7 @@ namespace TestGLFW
 		"	frag_color = vec4(color, 1.0);\n"
 		"}\0";
 
-	GLuint shader_program;
+	std::unique_ptr<ShaderProgram> p_shader_program;
 	GLuint vao;
 
 
@@ -142,25 +143,12 @@ namespace TestGLFW
 			});
 
 
-		// компил€ци€ вершинного шейдера
-		GLuint vs = glCreateShader(GL_VERTEX_SHADER);
-		glShaderSource(vs, 1, &vertex_shader, nullptr);
-		glCompileShader(vs);
-
-		// компил€ци€ фрагментного шейдера
-		GLuint fs = glCreateShader(GL_FRAGMENT_SHADER);
-		glShaderSource(fs, 1, &fragment_shader, nullptr);
-		glCompileShader(fs);
-
-		// линкинг шейдерной программы
-		shader_program = glCreateProgram();
-		glAttachShader(shader_program, vs);
-		glAttachShader(shader_program, fs);
-		glLinkProgram(shader_program);
-
-		// удаление шейдеров
-		glDeleteShader(vs);
-		glDeleteShader(fs);
+		// компил€ци€ шейдерной программы
+		p_shader_program = std::make_unique<ShaderProgram>(vertex_shader, fragment_shader);
+		if (!p_shader_program->isCompiled())
+		{
+			return false;
+		}
 
 		// генераци€ объекта вершинного буфера позиции
 		GLuint points_vbo = 0;
@@ -209,12 +197,12 @@ namespace TestGLFW
 
 
 		// треугольник
-		glUseProgram(shader_program);
+		p_shader_program->bind();
 		glBindVertexArray(vao);
 		glDrawArrays(GL_TRIANGLES, 0, 3);
 
 
-		// окно ImGui
+		// окно demo ImGui
 		ImGuiIO& io = ImGui::GetIO();
 		io.DisplaySize.x = static_cast<float>(get_width());
 		io.DisplaySize.y = static_cast<float>(get_height());

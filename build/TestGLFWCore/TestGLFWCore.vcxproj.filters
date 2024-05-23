@@ -2,35 +2,53 @@
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Application.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>src\TestGLFWCore</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Window.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>src\TestGLFWCore</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\ShaderProgram.cpp">
+      <Filter>src\TestGLFWCore\Rendering\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Application.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>includes\TestGLFWCore</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Log.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>includes\TestGLFWCore</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Event.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>includes\TestGLFWCore</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Window.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>includes\TestGLFWCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\ShaderProgram.hpp">
+      <Filter>src\TestGLFWCore\Rendering\OpenGL</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{CE9B8462-651D-3FEE-811D-AEFB741C20A3}</UniqueIdentifier>
+    <Filter Include="includes">
+      <UniqueIdentifier>{53E486EF-ED05-311D-BEEC-96FB33F781B2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{CCC93905-A9DB-3B64-9EA2-9AA3C1AD181C}</UniqueIdentifier>
+    <Filter Include="includes\TestGLFWCore">
+      <UniqueIdentifier>{E3ECC8BF-9586-3145-87AC-673380896C46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2972D828-71FD-3271-AC82-0CACA13A77AF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\TestGLFWCore">
+      <UniqueIdentifier>{C1140EC2-A741-3339-AD3D-6C47A88D1C3F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\TestGLFWCore\Rendering">
+      <UniqueIdentifier>{D920A941-517F-3074-9908-FC0A5D41D02A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\TestGLFWCore\Rendering\OpenGL">
+      <UniqueIdentifier>{3FFD7D4D-F9EA-38BF-891B-1B77C6E58BCE}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

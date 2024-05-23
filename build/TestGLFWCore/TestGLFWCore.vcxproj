@@ -277,8 +277,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Log.hpp" />
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Event.hpp" />
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Window.hpp" />
+    <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\ShaderProgram.hpp" />
     <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Application.cpp" />
     <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Window.cpp" />
+    <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\ShaderProgram.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\build\ZERO_CHECK.vcxproj">
