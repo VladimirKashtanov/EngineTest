@@ -6,12 +6,13 @@
 #include "TestGLFWCore/Rendering/OpenGL/VertexArray.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/IndexBuffer.hpp"
 
-#include <glad/glad.h>
+#include "TestGLFWCore/Rendering/OpenGL/Renderer_OpenGL.hpp"
+
 #include <GLFW/glfw3.h>
 
 #include <imgui/imgui.h>
-#include <imgui/backends/imgui_impl_opengl3.h>
 #include <imgui/backends/imgui_impl_glfw.h>
+#include <imgui/backends/imgui_impl_opengl3.h>
 
 #include <glm/mat4x4.hpp>
 #include <glm/trigonometric.hpp>
@@ -19,8 +20,6 @@
 
 namespace TestGLFW
 {
-	static bool s_GLFW_initialize = false;
-
 	GLfloat positions_colors[] = {
 		-0.5f, -0.5f, 0.0f,		1.0f, 1.0f, 0.0f,
 		 0.5f, -0.5f, 0.0f,		0.0f, 1.0f, 1.0f,
@@ -79,8 +78,8 @@ namespace TestGLFW
 		// Инициализация ImGui
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
-		ImGui_ImplOpenGL3_Init();
 		ImGui_ImplGlfw_InitForOpenGL(m_pWindow, true);
+		ImGui_ImplOpenGL3_Init();
 	}
 
 
@@ -94,31 +93,27 @@ namespace TestGLFW
 	{
 		LOG_INFO("Creating window '{0}' with size {1}x{2}", m_data.title, m_data.width, m_data.height);
 
-		// инициализация GLFW
-		if (!s_GLFW_initialize)
-		{
-			if (!glfwInit())
+		glfwSetErrorCallback([](int error_code, const char* description)
 			{
-				LOG_CRITICAL("Failed to initialize GLFW!");
-				return -1;
-			}
-			s_GLFW_initialize = true;
+				LOG_CRITICAL("GLFW error: {0}", description);
+			});
+
+		if (!glfwInit())
+		{
+			LOG_CRITICAL("Failed to initialize GLFW");
+			return -1;
 		}
 
-		// создание объекта окна
 		m_pWindow = glfwCreateWindow(m_data.width, m_data.height, m_data.title.c_str(), nullptr, nullptr);
 		if (!m_pWindow)
 		{
 			LOG_CRITICAL("Failed to create window '{0}' with size {1}x{2}", m_data.title, m_data.width, m_data.height);
-			glfwTerminate();
 			return -2;
 		}
-		glfwMakeContextCurrent(m_pWindow);
-
-		// Инициализация GLAD
-		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+		
+		if (!Renderer_OpenGL::init(m_pWindow))
 		{
-			LOG_CRITICAL("Failed to initialize GLAD!");
+			LOG_CRITICAL("Failed to initialize OpenGL renderer");
 			return -3;
 		}
 
@@ -156,7 +151,7 @@ namespace TestGLFW
 		glfwSetFramebufferSizeCallback(m_pWindow,
 			[](GLFWwindow* pWindow, int width, int height)
 			{
-				glViewport(0, 0, width, height);
+				Renderer_OpenGL::set_viewport(width, height);
 			});
 
 
@@ -194,6 +189,13 @@ namespace TestGLFW
 
 	void Window::shoutdown()
 	{
+		if (ImGui::GetCurrentContext())
+		{
+			ImGui_ImplOpenGL3_Shutdown();
+			ImGui_ImplGlfw_Shutdown();
+			ImGui::DestroyContext();
+		}
+
 		glfwDestroyWindow(m_pWindow);
 		glfwTerminate();
 	}
@@ -201,12 +203,8 @@ namespace TestGLFW
 
 	void Window::on_update()
 	{
-		glClearColor(m_background_color[0],
-			m_background_color[1],
-			m_background_color[2],
-			m_background_color[3]);
-		glClear(GL_COLOR_BUFFER_BIT);
-
+		Renderer_OpenGL::set_clear_color(m_background_color[0], m_background_color[1], m_background_color[2], m_background_color[3]		);
+		Renderer_OpenGL::clear();
 
 		// окно demo ImGui
 		ImGuiIO& io = ImGui::GetIO();
@@ -216,9 +214,6 @@ namespace TestGLFW
 		ImGui_ImplOpenGL3_NewFrame();
 		ImGui_ImplGlfw_NewFrame();
 		ImGui::NewFrame();
-
-		//ImGui::ShowDemoWindow();
-
 
 		// виджет для выбора цвета заливки фона окна opengl
 		ImGui::Begin("Background Color Window");
@@ -263,8 +258,7 @@ namespace TestGLFW
 		camera.set_projection_mode(perspective_camera ? Camera::ProjectionMode::Perspective : Camera::ProjectionMode::Orthographic);
 		p_shader_program->setMatrix4("view_projection_matrix", camera.get_projection_matrix() * camera.get_view_matrix());
 
-		p_vao->bind();
-		glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(p_vao->get_indices_count()), GL_UNSIGNED_INT, nullptr);
+		Renderer_OpenGL::draw(*p_vao);
 
 		ImGui::End();
 

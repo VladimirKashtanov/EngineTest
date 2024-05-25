@@ -15,6 +15,7 @@ set(ENGINE_PRIVATE_INCLUDES
 	src/TestGLFWCore/Rendering/OpenGL/VertexBuffer.hpp
 	src/TestGLFWCore/Rendering/OpenGL/IndexBuffer.hpp
 	src/TestGLFWCore/Rendering/OpenGL/VertexArray.hpp
+	src/TestGLFWCore/Rendering/OpenGL/Renderer_OpenGL.hpp
 )
 
 set(ENGINE_PRIVATE_SOURCES
@@ -25,6 +26,7 @@ set(ENGINE_PRIVATE_SOURCES
 	src/TestGLFWCore/Rendering/OpenGL/VertexBuffer.cpp
 	src/TestGLFWCore/Rendering/OpenGL/IndexBuffer.cpp
 	src/TestGLFWCore/Rendering/OpenGL/VertexArray.cpp
+	src/TestGLFWCore/Rendering/OpenGL/Renderer_OpenGL.cpp
 )
 
 set(ENGINE_ALL_SOURCES
