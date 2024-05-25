@@ -6,6 +6,7 @@ set(ENGINE_PUBLIC_INCLUDES
 	includes/TestGLFWCore/Application.hpp
 	includes/TestGLFWCore/Log.hpp
 	includes/TestGLFWCore/Event.hpp
+	includes/TestGLFWCore/Camera.hpp
 )
 
 set(ENGINE_PRIVATE_INCLUDES
@@ -19,6 +20,7 @@ set(ENGINE_PRIVATE_INCLUDES
 set(ENGINE_PRIVATE_SOURCES
 	src/TestGLFWCore/Application.cpp
 	src/TestGLFWCore/Window.cpp
+	src/TestGLFWCore/Camera.cpp
 	src/TestGLFWCore/Rendering/OpenGL/ShaderProgram.cpp
 	src/TestGLFWCore/Rendering/OpenGL/VertexBuffer.cpp
 	src/TestGLFWCore/Rendering/OpenGL/IndexBuffer.cpp

@@ -1,5 +1,6 @@
 #include "TestGLFWCore/Window.hpp"
 #include "TestGLFWCore/Log.hpp"
+#include "TestGLFWCore/Camera.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/ShaderProgram.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/VertexBuffer.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/VertexArray.hpp"
@@ -37,10 +38,11 @@ namespace TestGLFW
 		layout(location = 0) in vec3 vertex_position;
 		layout(location = 1) in vec3 vertex_color;
 		uniform mat4 model_matrix;
+		uniform mat4 view_projection_matrix;
 		out vec3 color;
 		void main()
 		{
-			gl_Position = model_matrix * vec4(vertex_position, 1.0);
+			gl_Position = view_projection_matrix * model_matrix * vec4(vertex_position, 1.0);
 			color = vertex_color;
 		}
 	)";
@@ -63,6 +65,11 @@ namespace TestGLFW
 	float scale[3] = { 1.0f, 1.0f, 1.0f };
 	float rotate = 0.0f;
 	float translate[3] = { 0.0f, 0.0f, 1.0f };
+
+	float camera_position[3] = { 0.0f, 0.0f, 1.0f };
+	float camera_rotation[3] = { 0.0f, 0.0f, 0.0f };
+	bool perspective_camera = false;
+	Camera camera;
 
 	Window::Window(std::string title, const unsigned int width, const unsigned int height)
 		: m_data({ std::move(title), width, height })
@@ -220,9 +227,13 @@ namespace TestGLFW
 		ImGui::SliderFloat("rotate", &rotate, 0.0f, 360.0f);
 		ImGui::SliderFloat3("translate", translate, -0.5f, 0.5f);
 
-		// треугольник
-		p_shader_program->bind();
+		ImGui::SliderFloat3("camera position", camera_position, -10.0f, 10.0f);
+		ImGui::SliderFloat3("camera rotation", camera_rotation, 0.0f, 360.0f);
+		ImGui::Checkbox("Perspective camera", &perspective_camera);
 
+
+		// рендеринг
+		p_shader_program->bind();
 
 		glm::mat4 scale_matrix(scale[0], 0,		   0,		 0,
 							   0,		 scale[1], 0,		 0,
@@ -244,8 +255,13 @@ namespace TestGLFW
 		);
 
 		glm::mat4 model_matrix = translate_matrix * rotate_matrix * scale_matrix;
-
 		p_shader_program->setMatrix4("model_matrix", model_matrix);
+
+		camera.set_position_rotation(glm::vec3(camera_position[0], camera_position[1], camera_position[2]), 
+									 glm::vec3(camera_rotation[0], camera_rotation[1], camera_rotation[2])
+		);
+		camera.set_projection_mode(perspective_camera ? Camera::ProjectionMode::Perspective : Camera::ProjectionMode::Orthographic);
+		p_shader_program->setMatrix4("view_projection_matrix", camera.get_projection_matrix() * camera.get_view_matrix());
 
 		p_vao->bind();
 		glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(p_vao->get_indices_count()), GL_UNSIGNED_INT, nullptr);
