@@ -1,6 +1,9 @@
 #include "TestGLFWCore/Window.hpp"
 #include "TestGLFWCore/Log.hpp"
 #include "TestGLFWCore/Camera.hpp"
+
+#include "TestGLFWCore/Modules/UIModule.hpp"
+
 #include "TestGLFWCore/Rendering/OpenGL/ShaderProgram.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/VertexBuffer.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/VertexArray.hpp"
@@ -75,11 +78,7 @@ namespace TestGLFW
 	{
 		int resultCode = init();
 
-		// »нициализаци€ ImGui
-		IMGUI_CHECKVERSION();
-		ImGui::CreateContext();
-		ImGui_ImplGlfw_InitForOpenGL(m_pWindow, true);
-		ImGui_ImplOpenGL3_Init();
+		
 	}
 
 
@@ -153,6 +152,7 @@ namespace TestGLFW
 			{
 				Renderer_OpenGL::set_viewport(width, height);
 			});
+		UIModule::on_window_create(m_pWindow);
 
 
 		// компил€ци€ шейдерной программы
@@ -189,13 +189,7 @@ namespace TestGLFW
 
 	void Window::shoutdown()
 	{
-		if (ImGui::GetCurrentContext())
-		{
-			ImGui_ImplOpenGL3_Shutdown();
-			ImGui_ImplGlfw_Shutdown();
-			ImGui::DestroyContext();
-		}
-
+		UIModule::on_window_close();
 		glfwDestroyWindow(m_pWindow);
 		glfwTerminate();
 	}
@@ -206,29 +200,11 @@ namespace TestGLFW
 		Renderer_OpenGL::set_clear_color(m_background_color[0], m_background_color[1], m_background_color[2], m_background_color[3]		);
 		Renderer_OpenGL::clear();
 
-		// окно demo ImGui
-		ImGuiIO& io = ImGui::GetIO();
-		io.DisplaySize.x = static_cast<float>(get_width());
-		io.DisplaySize.y = static_cast<float>(get_height());
+		UIModule::on_ui_draw_begin();
 
-		ImGui_ImplOpenGL3_NewFrame();
-		ImGui_ImplGlfw_NewFrame();
-		ImGui::NewFrame();
-
-		// виджет дл€ выбора цвета заливки фона окна opengl
-		ImGui::Begin("Background Color Window");
-		ImGui::ColorEdit4("Background Color", m_background_color);
-		ImGui::SliderFloat3("scale", scale, 0.0f, 2.0f);
-		ImGui::SliderFloat("rotate", &rotate, 0.0f, 360.0f);
-		ImGui::SliderFloat3("translate", translate, -0.5f, 0.5f);
-
-		ImGui::SliderFloat3("camera position", camera_position, -10.0f, 10.0f);
-		ImGui::SliderFloat3("camera rotation", camera_rotation, 0.0f, 360.0f);
-		ImGui::Checkbox("Perspective camera", &perspective_camera);
-
-
-		// рендеринг
-		p_shader_program->bind();
+		bool show = true;
+		UIModule::ShowExampleAppDockSpace(&show);
+		ImGui::ShowDemoWindow();
 
 		glm::mat4 scale_matrix(scale[0], 0,		   0,		 0,
 							   0,		 scale[1], 0,		 0,
@@ -258,13 +234,26 @@ namespace TestGLFW
 		camera.set_projection_mode(perspective_camera ? Camera::ProjectionMode::Perspective : Camera::ProjectionMode::Orthographic);
 		p_shader_program->setMatrix4("view_projection_matrix", camera.get_projection_matrix() * camera.get_view_matrix());
 
+
+		// рендеринг
+		p_shader_program->bind();
+
 		Renderer_OpenGL::draw(*p_vao);
+
+		ImGui::Begin("Background Color Window");
+
+		ImGui::ColorEdit4("Background Color", m_background_color);
+		ImGui::SliderFloat3("scale", scale, 0.0f, 2.0f);
+		ImGui::SliderFloat("rotate", &rotate, 0.0f, 360.0f);
+		ImGui::SliderFloat3("translate", translate, -0.5f, 0.5f);
+
+		ImGui::SliderFloat3("camera position", camera_position, -10.0f, 10.0f);
+		ImGui::SliderFloat3("camera rotation", camera_rotation, 0.0f, 360.0f);
+		ImGui::Checkbox("Perspective camera", &perspective_camera);
 
 		ImGui::End();
 
-
-		ImGui::Render();
-		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		UIModule::on_ui_draw_end();
 
 
 		glfwSwapBuffers(m_pWindow);
