@@ -3,7 +3,8 @@
 #define _APPLICATION_HPP
 
 
-#include <TestGLFWCore/Event.hpp>
+#include "TestGLFWCore/Event.hpp"
+#include "TestGLFWCore/Camera.hpp"
 
 #include <memory>
 
@@ -24,6 +25,13 @@ namespace TestGLFW
 		virtual int start(unsigned int window_width, unsigned int window_height, const char* window_title);
 
 		virtual void on_update() { }
+
+		virtual void on_ui_draw() { }
+
+		float camera_position[3] = { 0.0f, 0.0f, 1.0f };
+		float camera_rotation[3] = { 0.0f, 0.0f, 0.0f };
+		bool perspective_camera = false;
+		Camera camera;
 
 	private:
 		std::unique_ptr<struct Window> m_pWindow;

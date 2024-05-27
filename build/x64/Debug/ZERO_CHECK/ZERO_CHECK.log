@@ -1,7 +1,7 @@
 ﻿  1>Checking Build System
-  CMake is re-running because C:/Users/╨Т╨╗╨░╨┤╨╕╨╝╨╕╤А/source/repos/╨Ы╨а_╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А╨╜╨░╤П_╨│╤А╨░╤Д╨╕╨║╨░/GLFWprojects/TestGLFW/build/TestGLFWCore/CMakeFiles/generate.stamp is out-of-date.
-    the file 'C:/Users/╨Т╨╗╨░╨┤╨╕╨╝╨╕╤А/source/repos/╨Ы╨а_╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А╨╜╨░╤П_╨│╤А╨░╤Д╨╕╨║╨░/GLFWprojects/TestGLFW/TestGLFWCore/CMakeLists.txt'
-    is newer than 'C:/Users/╨Т╨╗╨░╨┤╨╕╨╝╨╕╤А/source/repos/╨Ы╨а_╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А╨╜╨░╤П_╨│╤А╨░╤Д╨╕╨║╨░/GLFWprojects/TestGLFW/build/TestGLFWCore/CMakeFiles/generate.stamp.depend'
+  CMake is re-running because C:/Users/╨Т╨╗╨░╨┤╨╕╨╝╨╕╤А/source/repos/╨Ы╨а_╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А╨╜╨░╤П_╨│╤А╨░╤Д╨╕╨║╨░/GLFWprojects/TestGLFW/build/TestGLFWEditor/CMakeFiles/generate.stamp is out-of-date.
+    the file 'C:/Users/╨Т╨╗╨░╨┤╨╕╨╝╨╕╤А/source/repos/╨Ы╨а_╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А╨╜╨░╤П_╨│╤А╨░╤Д╨╕╨║╨░/GLFWprojects/TestGLFW/TestGLFWEditor/CMakeLists.txt'
+    is newer than 'C:/Users/╨Т╨╗╨░╨┤╨╕╨╝╨╕╤А/source/repos/╨Ы╨а_╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А╨╜╨░╤П_╨│╤А╨░╤Д╨╕╨║╨░/GLFWprojects/TestGLFW/build/TestGLFWEditor/CMakeFiles/generate.stamp.depend'
     result='-1'
   -- Selecting Windows SDK version 10.0.22621.0 to target Windows 10.0.22631.
   -- Including Win32 support
@@ -12,5 +12,5 @@
   -- GLM: Version 1.0.2
   -- GLM: Build with C++ features auto detection
   -- Configuring done (0.2s)
-  -- Generating done (1.1s)
+  -- Generating done (0.7s)
   -- Build files have been written to: C:/Users/╨Т╨╗╨░╨┤╨╕╨╝╨╕╤А/source/repos/╨Ы╨а_╨║╨╛╨╝╨┐╤М╤О╤В╨╡╤А╨╜╨░╤П_╨│╤А╨░╤Д╨╕╨║╨░/GLFWprojects/TestGLFW/build
