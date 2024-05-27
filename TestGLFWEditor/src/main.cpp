@@ -2,14 +2,55 @@
 #include <memory>
 #include <imgui/imgui.h>
 
-#include "TestGLFWCore/Application.hpp"
+#include <TestGLFWCore/Input.hpp>
+#include <TestGLFWCore/Application.hpp>
 
 
 class TestGLFWEditor : public TestGLFW::Application
 {
 	void on_update() override
 	{
-		//std::cout << "Update frame: " << frame++ << std::endl;
+		if (TestGLFW::Input::isKeyPressed(TestGLFW::KeyCode::KEY_W))
+		{
+			camera_position[2] -= 0.001f;
+		}
+		if (TestGLFW::Input::isKeyPressed(TestGLFW::KeyCode::KEY_S))
+		{
+			camera_position[2] += 0.001f;
+		}
+		if (TestGLFW::Input::isKeyPressed(TestGLFW::KeyCode::KEY_A))
+		{
+			camera_position[0] -= 0.001f;
+		}
+		if (TestGLFW::Input::isKeyPressed(TestGLFW::KeyCode::KEY_D))
+		{
+			camera_position[0] += 0.001f;
+		}
+		if (TestGLFW::Input::isKeyPressed(TestGLFW::KeyCode::KEY_E))
+		{
+			camera_position[1] += 0.001f;
+		}
+		if (TestGLFW::Input::isKeyPressed(TestGLFW::KeyCode::KEY_Q))
+		{
+			camera_position[1] -= 0.001f;
+		}
+
+		if (TestGLFW::Input::isKeyPressed(TestGLFW::KeyCode::KEY_UP))
+		{
+			camera_rotation[0] += 0.1f;
+		}
+		if (TestGLFW::Input::isKeyPressed(TestGLFW::KeyCode::KEY_DOWN))
+		{
+			camera_rotation[0] -= 0.1f;
+		}
+		if (TestGLFW::Input::isKeyPressed(TestGLFW::KeyCode::KEY_RIGHT))
+		{
+			camera_rotation[1] -= 0.1f;
+		}
+		if (TestGLFW::Input::isKeyPressed(TestGLFW::KeyCode::KEY_LEFT))
+		{
+			camera_rotation[1] += 0.1f;
+		}
 	}
 
 

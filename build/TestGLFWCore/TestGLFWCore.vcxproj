@@ -277,6 +277,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Log.hpp" />
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Event.hpp" />
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Camera.hpp" />
+    <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Keys.hpp" />
+    <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Input.hpp" />
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Window.hpp" />
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Modules\UIModule.hpp" />
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\ShaderProgram.hpp" />
@@ -293,6 +295,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\IndexBuffer.cpp" />
     <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\VertexArray.cpp" />
     <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\Renderer_OpenGL.cpp" />
+    <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Input.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\build\ZERO_CHECK.vcxproj">

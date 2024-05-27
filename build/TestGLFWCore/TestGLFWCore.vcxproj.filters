@@ -28,6 +28,9 @@
     <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\Renderer_OpenGL.cpp">
       <Filter>src\TestGLFWCore\Rendering\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Input.cpp">
+      <Filter>src\TestGLFWCore</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Application.hpp">
@@ -40,6 +43,12 @@
       <Filter>includes\TestGLFWCore</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Camera.hpp">
+      <Filter>includes\TestGLFWCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Keys.hpp">
+      <Filter>includes\TestGLFWCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Input.hpp">
       <Filter>includes\TestGLFWCore</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\includes\TestGLFWCore\Window.hpp">

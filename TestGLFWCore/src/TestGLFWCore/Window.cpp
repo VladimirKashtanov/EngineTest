@@ -56,6 +56,36 @@ namespace TestGLFW
 
 		glfwSetWindowUserPointer(m_pWindow, &m_data);
 
+		glfwSetKeyCallback(m_pWindow,
+			[](GLFWwindow* pWindow, int key, int scancode, int action, int mods)
+			{
+				WindowData& data = *static_cast<WindowData*>(glfwGetWindowUserPointer(pWindow));
+				switch (action)
+				{
+				case GLFW_PRESS:
+				{
+					EventKeyPressed event(static_cast<KeyCode>(key), false);
+					data.eventCallbackFn(event);
+					break;
+				}
+
+				case GLFW_RELEASE:
+				{
+					EventKeyReleased event(static_cast<KeyCode>(key));
+					data.eventCallbackFn(event);
+					break;
+				}					
+
+				case GLFW_REPEAT:
+				{
+					EventKeyPressed event(static_cast<KeyCode>(key), true);
+					data.eventCallbackFn(event);
+					break;
+				}
+				}
+			}
+		);
+
 		glfwSetWindowSizeCallback(m_pWindow,
 			[](GLFWwindow* pWindow, int width, int height)
 			{
@@ -65,7 +95,8 @@ namespace TestGLFW
 
 				EventWindowResize event(width, height);
 				data.eventCallbackFn(event);
-			});
+			}
+		);
 
 		glfwSetCursorPosCallback(m_pWindow,
 			[](GLFWwindow* pWindow, double x, double y)
@@ -74,7 +105,8 @@ namespace TestGLFW
 
 				EventMouseMoved event(x, y);
 				data.eventCallbackFn(event);
-			});
+			}
+		);
 
 		glfwSetWindowCloseCallback(m_pWindow,
 			[](GLFWwindow* pWindow)
@@ -83,13 +115,15 @@ namespace TestGLFW
 
 				EventWindowClose event;
 				data.eventCallbackFn(event);
-			});
+			}
+		);
 
 		glfwSetFramebufferSizeCallback(m_pWindow,
 			[](GLFWwindow* pWindow, int width, int height)
 			{
 				Renderer_OpenGL::set_viewport(width, height);
-			});
+			}
+		);
 		UIModule::on_window_create(m_pWindow);
 
 		return 0;

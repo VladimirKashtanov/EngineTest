@@ -1,6 +1,8 @@
 #include "TestGLFWCore/Application.hpp"
-#include <TestGLFWCore/Log.hpp> 
-#include <TestGLFWCore/Window.hpp>
+#include "TestGLFWCore/Log.hpp" 
+#include "TestGLFWCore/Window.hpp"
+#include "TestGLFWCore/Event.hpp"
+#include "TestGLFWCore/Input.hpp"
 
 #include "TestGLFWCore/Camera.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/ShaderProgram.hpp"
@@ -87,20 +89,52 @@ namespace TestGLFW
 			[](EventMouseMoved& event)
 			{
 				//LOG_INFO("[MouseMoved] Mouse moved to {0}x{1}", event.x, event.y);
-			});
+			}
+		);
 
 		m_event_dispatcher.add_event_listener<EventWindowResize>(
 			[](EventWindowResize& event)
 			{
 				LOG_INFO("[Resized] Changed size to {0}x{1}", event.width, event.height);
-			});
+			}
+		);
 
 		m_event_dispatcher.add_event_listener<EventWindowClose>(
 			[&](EventWindowClose& event)
 			{
 				LOG_INFO("[WindowClosed]");
 				m_bCloseWindow = true;
-			});
+			}
+		);
+
+		m_event_dispatcher.add_event_listener<EventKeyPressed>(
+			[&](EventKeyPressed& event)
+			{
+				if (event.key_code <= KeyCode::KEY_Z)
+				{
+					if (event.repeated)
+					{
+						LOG_INFO("[Key Pressed]: {0}, repeated", static_cast<char>(event.key_code));
+					}
+					else
+					{
+						LOG_INFO("[Key Pressed]: {0}", static_cast<char>(event.key_code));
+					}
+				}
+				Input::pressKey(event.key_code);
+			}
+		);
+
+		m_event_dispatcher.add_event_listener<EventKeyReleased>(
+			[&](EventKeyReleased& event)
+			{
+				if (event.key_code <= KeyCode::KEY_Z)
+				{
+					LOG_INFO("[Key Released]: {0}", static_cast<char>(event.key_code));
+				}
+				Input::releaseKey(event.key_code);
+			}
+		);
 
 		m_pWindow->set_event_callback(
 			[&](BaseEvent& event)
