@@ -31,7 +31,7 @@ namespace TestGLFW
 		float camera_position[3] = { 0.0f, 0.0f, 2.0f };
 		float camera_rotation[3] = { 0.0f, 0.0f, 0.0f };
 		bool perspective_camera = true;
-		Camera camera;
+		Camera camera{ glm::vec3(-5.0f, 0.0f, 0.0f) };
 
 	private:
 		std::unique_ptr<struct Window> m_pWindow;
