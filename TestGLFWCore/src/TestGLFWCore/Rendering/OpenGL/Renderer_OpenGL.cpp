@@ -43,7 +43,7 @@ namespace TestGLFW
 
 	void Renderer_OpenGL::clear()
 	{
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
 
@@ -69,5 +69,17 @@ namespace TestGLFW
 	const char* Renderer_OpenGL::get_version_str()
 	{
 		return reinterpret_cast<const char*>(glGetString(GL_VERSION));
+	}
+
+
+	void Renderer_OpenGL::enable_depth_testing()
+	{
+		glEnable(GL_DEPTH_TEST);
+	}
+
+
+	void Renderer_OpenGL::disable_depth_testing()
+	{
+		glDisable(GL_DEPTH_TEST);
 	}
 }

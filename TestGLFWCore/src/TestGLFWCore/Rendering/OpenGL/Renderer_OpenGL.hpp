@@ -19,6 +19,8 @@ namespace TestGLFW
 		static void clear();
 		static void set_viewport(const unsigned int width, const unsigned int height,
 			const unsigned int left_offset = 0, const unsigned int bottom_offset = 0);
+		static void enable_depth_testing();
+		static void disable_depth_testing();
 
 		static const char* get_vendor_str();
 		static const char* get_renderer_str();
