@@ -200,9 +200,53 @@ namespace TestGLFW
 		LOG_INFO("Closing Application");
 	}
 
+
+	void Application::draw()
+	{
+		Renderer_OpenGL::set_clear_color(m_background_color[0], m_background_color[1], m_background_color[2], m_background_color[3]);
+		Renderer_OpenGL::clear();
+
+		p_shader_program->bind();
+
+		glm::mat4 model_matrix(1.0f);
+
+		model_matrix = glm::translate(model_matrix, translate);
+
+		float rotate_in_rad = glm::radians(rotate);
+		model_matrix = glm::rotate(model_matrix, rotate_in_rad, glm::vec3(0, 0, 1));
+
+		model_matrix = glm::scale(model_matrix, scale);
+
+		p_shader_program->set_matrix4("model_matrix", model_matrix);
+		static int current_frame = 0;
+		p_shader_program->set_int("current_frame", current_frame++ / 8);
+
+		camera.set_projection_mode(perspective_camera ? Camera::ProjectionMode::Perspective : Camera::ProjectionMode::Orthographic);
+		p_shader_program->set_matrix4("view_projection_matrix", camera.get_projection_matrix() * camera.get_view_matrix());
+		Renderer_OpenGL::draw(*p_vao);
+
+		for (const glm::vec3& current_position : positions)
+		{
+			model_matrix = glm::mat4(1.0f);
+			model_matrix = glm::translate(model_matrix, current_position);
+			p_shader_program->set_matrix4("model_matrix", model_matrix);
+
+			Renderer_OpenGL::draw(*p_vao);
+		}
+
+		UIModule::on_ui_draw_begin();
+		on_ui_draw();
+		UIModule::on_ui_draw_end();
+
+		m_pWindow->on_update();
+		on_update();
+	}
+
+
 	int Application::start(unsigned int window_width, unsigned int window_height, const char* window_title)
 	{
 		m_pWindow = std::make_unique<Window>(window_title, window_width, window_height);
+		camera.set_viewport_size(static_cast<float>(window_width), static_cast<float>(window_height));
 
 		m_event_dispatcher.add_event_listener<EventMouseMoved>(
 			[](EventMouseMoved& event)
@@ -212,9 +256,11 @@ namespace TestGLFW
 		);
 
 		m_event_dispatcher.add_event_listener<EventWindowResize>(
-			[](EventWindowResize& event)
+			[&](EventWindowResize& event)
 			{
 				LOG_INFO("[Resized] Changed size to {0}x{1}", event.width, event.height);
+				camera.set_viewport_size(event.width, event.height);
+				draw();
 			}
 		);
 
@@ -319,66 +365,11 @@ namespace TestGLFW
 		// ------------------------------------------ //
 
 
-		static int current_frame = 0;
-
 		// цикл рендеринга
 		Renderer_OpenGL::enable_depth_testing();
 		while (!m_bCloseWindow)
 		{
-			Renderer_OpenGL::set_clear_color(m_background_color[0], m_background_color[1], m_background_color[2], m_background_color[3]);
-			Renderer_OpenGL::clear();
-
-			p_shader_program->bind();
-
-			glm::mat4 model_matrix(1.0f);
-
-			model_matrix = glm::translate(model_matrix, translate);
-			
-			float rotate_in_rad = glm::radians(rotate);
-			model_matrix = glm::rotate(model_matrix, rotate_in_rad, glm::vec3(0, 0, 1));
-
-			model_matrix = glm::scale(model_matrix, scale);
-
-			p_shader_program->set_matrix4("model_matrix", model_matrix);	
-			//p_shader_program->set_int("current_frame", current_frame++);
-
-			camera.set_projection_mode(perspective_camera ? Camera::ProjectionMode::Perspective : Camera::ProjectionMode::Orthographic);
-			p_shader_program->set_matrix4("view_projection_matrix", camera.get_projection_matrix() * camera.get_view_matrix());
-			Renderer_OpenGL::draw(*p_vao);
-
-			for (const glm::vec3& current_position : positions)
-			{
-				model_matrix = glm::mat4(1.0f);
-				model_matrix = glm::translate(model_matrix, current_position);
-				p_shader_program->set_matrix4("model_matrix", model_matrix);
-
-				Renderer_OpenGL::draw(*p_vao);
-			}
-
-			// ------------------------------------------ //
-			UIModule::on_ui_draw_begin();
-
-			bool show = true;
-			UIModule::ShowExampleAppDockSpace(&show);
-			ImGui::ShowDemoWindow();
-
-			ImGui::Begin("Background Color Window");
-			ImGui::ColorEdit4("Background Color", m_background_color);
-			ImGui::SliderFloat3("scale", glm::value_ptr(scale), 0.0f, 2.0f);
-			ImGui::SliderFloat("rotate", &rotate, 0.0f, 360.0f);
-			ImGui::SliderFloat3("translate", glm::value_ptr(translate), -0.5f, 0.5f);
-			ImGui::SliderFloat3("camera position", camera_position, -10.0f, 10.0f);
-			ImGui::SliderFloat3("camera rotation", camera_rotation, 0.0f, 360.0f);
-			ImGui::Checkbox("Perspective camera", &perspective_camera);
-			ImGui::End();
-			// ------------------------------------------ //
-
-			on_ui_draw();
-
-			UIModule::on_ui_draw_end();
-
-			m_pWindow->on_update();
-			on_update();
+			draw();
 		}
 		m_pWindow = nullptr;
 
@@ -389,5 +380,11 @@ namespace TestGLFW
 	glm::vec2 Application::get_current_cursor_position() const
 	{
 		return m_pWindow->get_current_cursor_position();
+	}
+
+
+	void Application::close()
+	{
+		m_bCloseWindow = true;
 	}
 }
