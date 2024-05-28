@@ -25,6 +25,9 @@
     <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\VertexArray.cpp">
       <Filter>src\TestGLFWCore\Rendering\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\Texture2D.cpp">
+      <Filter>src\TestGLFWCore\Rendering\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\Renderer_OpenGL.cpp">
       <Filter>src\TestGLFWCore\Rendering\OpenGL</Filter>
     </ClCompile>
@@ -67,6 +70,9 @@
       <Filter>src\TestGLFWCore\Rendering\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\VertexArray.hpp">
+      <Filter>src\TestGLFWCore\Rendering\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\Texture2D.hpp">
       <Filter>src\TestGLFWCore\Rendering\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Rendering\OpenGL\Renderer_OpenGL.hpp">

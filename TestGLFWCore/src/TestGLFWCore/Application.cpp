@@ -8,6 +8,7 @@
 #include "TestGLFWCore/Rendering/OpenGL/VertexBuffer.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/VertexArray.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/IndexBuffer.hpp"
+#include "TestGLFWCore/Rendering/OpenGL/Texture2D.hpp"
 #include "TestGLFWCore/Camera.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/Renderer_OpenGL.hpp"
 #include "TestGLFWCore/Modules/UIModule.hpp"
@@ -17,7 +18,6 @@
 #include <glm/mat3x3.hpp>
 #include <glm/trigonometric.hpp>
 
-#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 #include <iostream>
@@ -26,10 +26,10 @@
 namespace TestGLFW
 {
 	GLfloat positions_colors[] = {
-		0.0f, -0.5f, -0.5f, 		1.0f, 1.0f, 0.0f,		2.0f, 0.0f,
+		0.0f, -0.5f, -0.5f, 		1.0f, 1.0f, 0.0f,		1.0f, 0.0f,
 		0.0f,  0.5f, -0.5f, 		0.0f, 1.0f, 1.0f,		0.0f, 0.0f,
-		0.0f, -0.5f,  0.5f, 		1.0f, 0.0f, 1.0f,		2.0f, 2.0f,
-		0.0f,  0.5f,  0.5f, 		1.0f, 0.0f, 0.0f,		0.0f, 2.0f
+		0.0f, -0.5f,  0.5f, 		1.0f, 0.0f, 1.0f,		1.0f, 1.0f,
+		0.0f,  0.5f,  0.5f, 		1.0f, 0.0f, 0.0f,		0.0f, 1.0f
 	};
 
 	GLuint indices[] = {
@@ -156,13 +156,17 @@ namespace TestGLFW
 
 		void main()
 		{
-			frag_color = texture(InTexture_smile, tex_coord_smile) * texture(InTexture_quards, tex_coord_quards);
+			//frag_color = texture(InTexture_smile, tex_coord_smile) * texture(InTexture_quards, tex_coord_quards);
+			//frag_color = texture(InTexture_quards, tex_coord_quards);
+			frag_color = texture(InTexture_smile, tex_coord_smile);
 		}
 	)";
 
 	std::unique_ptr<ShaderProgram> p_shader_program;
 	std::unique_ptr<VertexBuffer>  p_positions_colors_vbo;
 	std::unique_ptr<IndexBuffer>   p_index_buffer;
+	std::unique_ptr<Texture2D>     p_texture_smile;
+	std::unique_ptr<Texture2D>     p_texture_quards;
 	std::unique_ptr<VertexArray>   p_vao;
 	float scale[3] = { 1.0f, 1.0f, 1.0f };
 	float rotate = 0.0f;
@@ -261,36 +265,19 @@ namespace TestGLFW
 		);
 
 
-		const unsigned int width = 1000;
-		const unsigned int height = 1000;
+		const unsigned int width = 100;
+		const unsigned int height = 100;
 		const unsigned int channels = 3;
 		auto* data = new unsigned char[width * height * channels];
 
-		GLuint textureHandle_smile;
-		glCreateTextures(GL_TEXTURE_2D, 1, &textureHandle_smile);
-		glTextureStorage2D(textureHandle_smile, 1, GL_RGB8, width, height);
 		generate_smile_texture(data, width, height);
-		glTextureSubImage2D(textureHandle_smile, 0, 0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, data);
+		p_texture_smile = std::make_unique<Texture2D>(data, width, height);
+		p_texture_smile->bind(0);
 
-		glTextureParameteri(textureHandle_smile, GL_TEXTURE_WRAP_S, GL_REPEAT);
-		glTextureParameteri(textureHandle_smile, GL_TEXTURE_WRAP_T, GL_REPEAT);
-		glTextureParameteri(textureHandle_smile, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-		glTextureParameteri(textureHandle_smile, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-		glBindTextureUnit(0, textureHandle_smile);
-
-
-		GLuint textureHandle_quards;
-		glCreateTextures(GL_TEXTURE_2D, 1, &textureHandle_quards);
-		glTextureStorage2D(textureHandle_quards, 1, GL_RGB8, width, height);
 		generate_quards_texture(data, width, height);
-		glTextureSubImage2D(textureHandle_quards, 0, 0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, data);
-
-		glTextureParameteri(textureHandle_quards, GL_TEXTURE_WRAP_S, GL_REPEAT);
-		glTextureParameteri(textureHandle_quards, GL_TEXTURE_WRAP_T, GL_REPEAT);
-		glTextureParameteri(textureHandle_quards, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-		glTextureParameteri(textureHandle_quards, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-		glBindTextureUnit(1, textureHandle_quards);
-
+		p_texture_quards = std::make_unique<Texture2D>(data, width, height);
+		p_texture_quards->bind(1);
+		
 		delete[] data;
 
 
@@ -356,7 +343,7 @@ namespace TestGLFW
 
 			glm::mat4 model_matrix = translate_matrix * rotate_matrix * scale_matrix;
 			p_shader_program->set_matrix4("model_matrix", model_matrix);
-			p_shader_program->set_int("current_frame", current_frame++);
+			//p_shader_program->set_int("current_frame", current_frame++);
 
 			camera.set_projection_mode(perspective_camera ? Camera::ProjectionMode::Perspective : Camera::ProjectionMode::Orthographic);
 			p_shader_program->set_matrix4("view_projection_matrix", camera.get_projection_matrix() * camera.get_view_matrix());
@@ -391,8 +378,6 @@ namespace TestGLFW
 			m_pWindow->on_update();
 			on_update();
 		}
-		glDeleteTextures(1, &textureHandle_smile);
-		glDeleteTextures(1, &textureHandle_quards);
 		m_pWindow = nullptr;
 
         return 0;
