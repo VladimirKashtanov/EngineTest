@@ -24,9 +24,18 @@ namespace TestGLFW
 
 		virtual int start(unsigned int window_width, unsigned int window_height, const char* window_title);
 
-		virtual void on_update() { }
+		virtual void on_update() {}
 
-		virtual void on_ui_draw() { }
+		virtual void on_ui_draw() {}
+
+		virtual void on_mouse_button_event(
+			const MouseButton button_code, 
+			const double x_pos, 
+			const double y_pos, 
+			const bool pressed) 
+		{}
+
+		glm::vec2 get_current_cursor_position() const;
 
 		float camera_position[3] = { 0.0f, 0.0f, 2.0f };
 		float camera_rotation[3] = { 0.0f, 0.0f, 0.0f };
@@ -34,7 +43,7 @@ namespace TestGLFW
 		Camera camera{ glm::vec3(-5.0f, 0.0f, 0.0f) };
 
 	private:
-		std::unique_ptr<struct Window> m_pWindow;
+		std::unique_ptr<class Window> m_pWindow;
 
 		EventDispatcher m_event_dispatcher;
 		bool        m_bCloseWindow = false;

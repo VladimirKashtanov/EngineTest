@@ -70,7 +70,6 @@ namespace TestGLFW
 		EventMouseMoved(const double new_x, const double new_y)
 			: x(new_x), y(new_y)
 		{
-
 		}
 
 		EventType get_type() const override
@@ -90,7 +89,6 @@ namespace TestGLFW
 		EventWindowResize(const unsigned int new_width, const unsigned int new_height)
 			: width(new_width), height(new_height)
 		{
-
 		}
 
 		EventType get_type() const override
@@ -121,7 +119,6 @@ namespace TestGLFW
 		EventKeyPressed(const KeyCode key_code, const bool repeated)
 			: key_code(key_code), repeated(repeated)
 		{
-	
 		}
 
 		EventType get_type() const override
@@ -141,7 +138,6 @@ namespace TestGLFW
 		EventKeyReleased(const KeyCode key_code)
 			: key_code(key_code)
 		{
-
 		}
 
 		EventType get_type() const override
@@ -152,6 +148,50 @@ namespace TestGLFW
 		KeyCode key_code;
 
 		static const EventType type = EventType::KeyReleased;
+	};
+
+
+	struct EventMouseButtonPressed : public BaseEvent
+	{
+		EventMouseButtonPressed(const MouseButton mouse_button, const double x_pos, const double y_pos)
+			: mouse_button(mouse_button), 
+			x_pos(x_pos),
+			y_pos(y_pos)
+		{
+		}
+
+		EventType get_type() const override
+		{
+			return type;
+		}
+
+		MouseButton mouse_button;
+		double x_pos;
+		double y_pos;
+
+		static const EventType type = EventType::MouseButtonPressed;
+	};
+
+
+	struct EventMouseButtonReleased : public BaseEvent
+	{
+		EventMouseButtonReleased(const MouseButton mouse_button, const double x_pos, const double y_pos)
+			: mouse_button(mouse_button),
+			x_pos(x_pos),
+			y_pos(y_pos)
+		{
+		}
+
+		EventType get_type() const override
+		{
+			return type;
+		}
+
+		MouseButton mouse_button;
+		double x_pos;
+		double y_pos;
+
+		static const EventType type = EventType::MouseButtonReleased;
 	};
 }
 

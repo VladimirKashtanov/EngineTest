@@ -6,7 +6,8 @@
 
 namespace TestGLFW
 {
-	Camera::Camera(const glm::vec3& position,
+	Camera::Camera(
+		const glm::vec3& position,
 		const glm::vec3& rotation,
 		const ProjectionMode projection_mode)
 		: m_position(position),
@@ -15,6 +16,17 @@ namespace TestGLFW
 	{
 		update_view_matrix();
 		update_projection_matrix();
+	}
+
+
+	const glm::mat4& Camera::get_view_matrix()
+	{
+		if (m_update_view_matrix)
+		{
+			update_view_matrix();
+			m_update_view_matrix = false;
+		}
+		return m_view_matrix;
 	}
 
 	
@@ -86,14 +98,14 @@ namespace TestGLFW
 	void Camera::set_position(const glm::vec3& position)
 	{
 		m_position = position;
-		update_view_matrix();
+		m_update_view_matrix = true;
 	}
 
 
 	void Camera::set_rotation(const glm::vec3& rotation)
 	{
 		m_rotation = rotation;
-		update_view_matrix();
+		m_update_view_matrix = true;
 	}
 
 
@@ -101,47 +113,48 @@ namespace TestGLFW
 	{
 		m_position = position;
 		m_rotation = rotation;
-		update_view_matrix();
+		m_update_view_matrix = true;
 	}
 
 
-	void Camera::set_projection_mode(const ProjectionMode projection_node)
+	void Camera::set_projection_mode(const ProjectionMode projection_mode)
 	{
-		m_projection_mode = projection_node;
-		update_projection_matrix();
+		m_projection_mode = projection_mode;
+		m_update_view_matrix = true;
 	}
 
 
 	void Camera::move_forward(const float delta)
 	{
 		m_position += m_direction * delta;
-		update_view_matrix();
+		m_update_view_matrix = true;
 	}
 
 
 	void Camera::move_right(const float delta)
 	{
 		m_position += m_right * delta;
-		update_view_matrix();
+		m_update_view_matrix = true;
 	}
 
 
 	void Camera::move_up(const float delta)
 	{
-		m_position += m_up * delta;
-		update_view_matrix();
+		m_position += s_world_up * delta;
+		m_update_view_matrix = true;
 	}
 
 
-	void Camera::add_movement_and_rotation(const glm::vec3& movement_delta,
-		const glm::vec3& rotate_delta)
+	void Camera::add_movement_and_rotation(
+		const glm::vec3& movement_delta,
+		const glm::vec3& rotation_delta)
 	{
 		m_position += m_direction * movement_delta.x;
 		m_position += m_right	  * movement_delta.y;
 		m_position += m_up		  * movement_delta.z;
 
-		m_rotation += rotate_delta;
+		m_rotation += rotation_delta;
 
-		update_view_matrix();
+		m_update_view_matrix = true;
 	}
 }

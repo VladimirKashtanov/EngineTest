@@ -15,8 +15,13 @@ namespace TestGLFW
 		static void pressKey(const KeyCode key_code);
 		static void releaseKey(const KeyCode key_code);
 
+		static bool isMouseButtonPressed(const MouseButton mouse_button);
+		static void pressMouseButton(const MouseButton mouse_button);
+		static void releaseMouseButton(const MouseButton mouse_button);
+
 	private:
-		static bool m_keys_pressed[static_cast<size_t>(KeyCode::KEY_LAST)];
+		static bool m_keys_pressed[];
+		static bool m_mouse_buttons_pressed[];
 	};
 }
 

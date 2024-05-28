@@ -4,17 +4,17 @@
 #include "TestGLFWCore/Event.hpp"
 #include "TestGLFWCore/Input.hpp"
 
-#include "TestGLFWCore/Camera.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/ShaderProgram.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/VertexBuffer.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/VertexArray.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/IndexBuffer.hpp"
+#include "TestGLFWCore/Camera.hpp"
 #include "TestGLFWCore/Rendering/OpenGL/Renderer_OpenGL.hpp"
 #include "TestGLFWCore/Modules/UIModule.hpp"
 
 #include <imgui/imgui.h>
 
-#include <glm/mat4x4.hpp>
+#include <glm/mat3x3.hpp>
 #include <glm/trigonometric.hpp>
 
 #include <GLFW/glfw3.h>
@@ -107,6 +107,24 @@ namespace TestGLFW
 			}
 		);
 
+		m_event_dispatcher.add_event_listener<EventMouseButtonPressed>(
+			[&](EventMouseButtonPressed& event)
+			{
+				LOG_INFO("[Mouse button pressed]: {0} at ({1}, {2})", static_cast<int>(event.mouse_button), event.x_pos, event.y_pos);
+				Input::pressMouseButton(event.mouse_button);
+				on_mouse_button_event(event.mouse_button, event.x_pos, event.y_pos, true);
+			}
+		);
+
+		m_event_dispatcher.add_event_listener<EventMouseButtonReleased>(
+			[&](EventMouseButtonReleased& event)
+			{
+				LOG_INFO("[Mouse button released]: {0} at ({1}, {2})", static_cast<int>(event.mouse_button), event.x_pos, event.y_pos);
+				Input::releaseMouseButton(event.mouse_button);
+				on_mouse_button_event(event.mouse_button, event.x_pos, event.y_pos, false);
+			}
+		);
+
 		m_event_dispatcher.add_event_listener<EventKeyPressed>(
 			[&](EventKeyPressed& event)
 			{
@@ -114,11 +132,11 @@ namespace TestGLFW
 				{
 					if (event.repeated)
 					{
-						LOG_INFO("[Key Pressed]: {0}, repeated", static_cast<char>(event.key_code));
+						LOG_INFO("[Key pressed]: {0}, repeated", static_cast<char>(event.key_code));
 					}
 					else
 					{
-						LOG_INFO("[Key Pressed]: {0}", static_cast<char>(event.key_code));
+						LOG_INFO("[Key pressed]: {0}", static_cast<char>(event.key_code));
 					}
 				}
 				Input::pressKey(event.key_code);
@@ -130,7 +148,7 @@ namespace TestGLFW
 			{
 				if (event.key_code <= KeyCode::KEY_Z)
 				{
-					LOG_INFO("[Key Released]: {0}", static_cast<char>(event.key_code));
+					LOG_INFO("[Key released]: {0}", static_cast<char>(event.key_code));
 				}
 				Input::releaseKey(event.key_code);
 			}
@@ -239,5 +257,11 @@ namespace TestGLFW
 		m_pWindow = nullptr;
 
         return 0;
+	}
+
+
+	glm::vec2 Application::get_current_cursor_position() const
+	{
+		return m_pWindow->get_current_cursor_position();
 	}
 }
