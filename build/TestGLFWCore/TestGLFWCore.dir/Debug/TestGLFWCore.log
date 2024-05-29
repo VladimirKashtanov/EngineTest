@@ -16,4 +16,9 @@ C:\Users\Владимир\source\repos\ЛР_компьютерная_графи�
 C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Application.cpp(128,46): warning C4244: аргумент: преобразование "double" в "const unsigned int", возможна потеря данных
 C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Application.cpp(358,48): warning C4244: аргумент: преобразование "unsigned int" в "const float", возможна потеря данных
 C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\TestGLFWCore\src\TestGLFWCore\Application.cpp(358,35): warning C4244: аргумент: преобразование "unsigned int" в "const float", возможна потеря данных
+  IndexBuffer.cpp
+  Renderer_OpenGL.cpp
+  VertexArray.cpp
+  VertexBuffer.cpp
+  Создание кода...
   TestGLFWCore.vcxproj -> C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\TestGLFW\build\TestGLFWCore\Debug\TestGLFWCore.lib
