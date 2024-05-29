@@ -1,0 +1,10 @@
+﻿  Building Custom Rule C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/EngineCore/CMakeLists.txt
+  imgui.cpp
+  imgui_impl_glfw.cpp
+  imgui_impl_opengl3.cpp
+  imgui_draw.cpp
+  imgui_tables.cpp
+  imgui_widgets.cpp
+  imgui_demo.cpp
+  Создание кода...
+  ImGui.vcxproj -> C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\EngineCore\Debug\ImGui.lib

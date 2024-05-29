@@ -1,0 +1,10 @@
+^C:\USERS\ВЛАДИМИР\SOURCE\REPOS\ЛР_КОМПЬЮТЕРНАЯ_ГРАФИКА\GLFWPROJECTS\ENGINE\EXTERNAL\SPDLOG\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine -BC:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build --check-stamp-file C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build/EngineCore/spdlog/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 
-project(TestGLFW)
+project(Engine)
 
-add_subdirectory(TestGLFWEditor)
-add_subdirectory(TestGLFWCore)
+add_subdirectory(EngineEditor)
+add_subdirectory(EngineCore)

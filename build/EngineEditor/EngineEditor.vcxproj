@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E2B1EE4A-7A1D-343D-92E4-DFD4472D4F60}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>EngineEditor</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EngineEditor.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">EngineEditor</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">EngineEditor.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">EngineEditor</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">EngineEditor.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">EngineEditor</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">EngineEditor.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">EngineEditor</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\includes;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external\imgui;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\includes;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external\imgui;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\includes;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external\imgui;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\EngineCore\Debug\EngineCore.lib;..\EngineCore\Debug\ImGui.lib;..\EngineCore\glm\glm\Debug\glm.lib;..\EngineCore\glfw\src\Debug\glfw3.lib;..\EngineCore\spdlog\Debug\spdlogd.lib;..\EngineCore\glad\Debug\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build/EngineEditor/Debug/EngineEditor.lib</ImportLibrary>
+      <ProgramDataBaseFile>/bin/Debug/EngineEditor.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\includes;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external\imgui;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\includes;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external\imgui;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\includes;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external\imgui;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\EngineCore\Release\EngineCore.lib;..\EngineCore\Release\ImGui.lib;..\EngineCore\glm\glm\Release\glm.lib;..\EngineCore\glfw\src\Release\glfw3.lib;..\EngineCore\spdlog\Release\spdlog.lib;..\EngineCore\glad\Release\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build/EngineEditor/Release/EngineEditor.lib</ImportLibrary>
+      <ProgramDataBaseFile>/bin/Release/EngineEditor.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\includes;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external\imgui;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\includes;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external\imgui;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\includes;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external\imgui;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\EngineCore\MinSizeRel\EngineCore.lib;..\EngineCore\MinSizeRel\ImGui.lib;..\EngineCore\glm\glm\MinSizeRel\glm.lib;..\EngineCore\glfw\src\MinSizeRel\glfw3.lib;..\EngineCore\spdlog\MinSizeRel\spdlog.lib;..\EngineCore\glad\MinSizeRel\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build/EngineEditor/MinSizeRel/EngineEditor.lib</ImportLibrary>
+      <ProgramDataBaseFile>/bin/MinSizeRel/EngineEditor.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\includes;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external\imgui;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\includes;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external\imgui;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\includes;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineCore\..\external\imgui;C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\EngineCore\RelWithDebInfo\EngineCore.lib;..\EngineCore\RelWithDebInfo\ImGui.lib;..\EngineCore\glm\glm\RelWithDebInfo\glm.lib;..\EngineCore\glfw\src\RelWithDebInfo\glfw3.lib;..\EngineCore\spdlog\RelWithDebInfo\spdlog.lib;..\EngineCore\glad\RelWithDebInfo\glad.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build/EngineEditor/RelWithDebInfo/EngineEditor.lib</ImportLibrary>
+      <ProgramDataBaseFile>/bin/RelWithDebInfo/EngineEditor.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineEditor\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/EngineEditor/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine -BC:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build --check-stamp-file C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build/EngineEditor/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\EngineEditor\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/EngineEditor/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine -BC:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build --check-stamp-file C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build/EngineEditor/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\EngineEditor\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/EngineEditor/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine -BC:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build --check-stamp-file C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build/EngineEditor/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\EngineEditor\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/EngineEditor/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine -BC:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build --check-stamp-file C:/Users/Владимир/source/repos/ЛР_компьютерная_графика/GLFWprojects/Engine/build/EngineEditor/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\EngineEditor\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\EngineEditor\src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\ZERO_CHECK.vcxproj">
+      <Project>{A2B3B103-108A-3B76-97C0-2CD7A9AEE4B6}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\EngineCore\EngineCore.vcxproj">
+      <Project>{B7D0A193-6DEA-3628-A1F1-9A1B8AEDA29E}</Project>
+      <Name>EngineCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\EngineCore\ImGui.vcxproj">
+      <Project>{2FC08941-F7F0-3963-A53D-C3B9FADB6ADE}</Project>
+      <Name>ImGui</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\EngineCore\glad\glad.vcxproj">
+      <Project>{8D7AF18C-4391-3646-BC76-32F6C1871E8F}</Project>
+      <Name>glad</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\EngineCore\glfw\src\glfw.vcxproj">
+      <Project>{31028364-161F-3913-A3BF-8C5FD08B25AC}</Project>
+      <Name>glfw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\EngineCore\glm\glm\glm.vcxproj">
+      <Project>{79707233-F3EE-33FA-A115-0F6EC20BFFEF}</Project>
+      <Name>glm</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\EngineCore\spdlog\spdlog.vcxproj">
+      <Project>{247B314D-6832-3776-83D2-3BB49E006AC7}</Project>
+      <Name>spdlog</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

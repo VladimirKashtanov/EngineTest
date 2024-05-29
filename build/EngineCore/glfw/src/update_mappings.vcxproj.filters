@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\CMakeFiles\d3efc95384ca2432b032922d09fcce0f\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glfw\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glfw\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\external\glfw\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Users\Владимир\source\repos\ЛР_компьютерная_графика\GLFWprojects\Engine\build\EngineCore\glfw\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{0EE4B370-3EEF-34DD-A53B-5C7245DA4CB2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{303B8C54-3457-372D-AD51-0C12D2457E0C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
