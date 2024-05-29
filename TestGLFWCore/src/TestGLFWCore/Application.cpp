@@ -27,27 +27,53 @@
 
 namespace TestGLFW
 {
-	GLfloat positions_coords[] = {
-		// front
-		-1.0f, -1.0f, -1.0f,	1.0f, 0.0f,
-		-1.0f,  1.0f, -1.0f,	0.0f, 0.0f,
-		-1.0f, -1.0f,  1.0f,	1.0f, 1.0f,
-		-1.0f,  1.0f,  1.0f,	0.0f, 1.0f,
+	GLfloat pos_norm_uv[] = {
+		//   position					normal				uv			index
 
-		// back
-		 1.0f, -1.0f, -1.0f,	1.0f, 0.0f,
-		 1.0f,  1.0f, -1.0f,	0.0f, 0.0f,
-		 1.0f, -1.0f,  1.0f,	1.0f, 1.0f,
-		 1.0f,  1.0f,  1.0f,	0.0f, 1.0f
+		// FRONT
+		-1.0f, -1.0f, -1.0f,	-1.0f,  0.0f,  0.0f,	0.0f, 0.0f,		// 0
+		-1.0f,  1.0f, -1.0f,	-1.0f,  0.0f,  0.0f,	1.0f, 0.0f,		// 1
+		-1.0f,  1.0f,  1.0f,	-1.0f,  0.0f,  0.0f,	1.0f, 1.0f,		// 2
+		-1.0f, -1.0f,  1.0f,	-1.0f,  0.0f,  0.0f,	0.0f, 1.0f,		// 3
+
+		// BACK
+		 1.0f, -1.0f, -1.0f,	 1.0f,  0.0f,  0.0f,	1.0f, 0.0f,		// 4
+		 1.0f,  1.0f, -1.0f,	 1.0f,  0.0f,  0.0f,	0.0f, 0.0f,		// 5
+		 1.0f,  1.0f,  1.0f,	 1.0f,  0.0f,  0.0f,	0.0f, 1.0f,		// 6
+		 1.0f, -1.0f,  1.0f,	 1.0f,  0.0f,  0.0f,	1.0f, 1.0f,		// 7
+
+		 // RIGHT
+		-1.0f,  1.0f, -1.0f,	 0.0f,  1.0f,  0.0f,	0.0f, 0.0f,		// 8
+		 1.0f,  1.0f, -1.0f,	 0.0f,  1.0f,  0.0f,	1.0f, 0.0f,		// 9
+		 1.0f,  1.0f,  1.0f,	 0.0f,  1.0f,  0.0f,	1.0f, 1.0f,		// 10
+		-1.0f,  1.0f,  1.0f,	 0.0f,  1.0f,  0.0f,	0.0f, 1.0f,		// 11
+
+		// LEFT
+		-1.0f, -1.0f, -1.0f,	 0.0f, -1.0f,  0.0f,	1.0f, 0.0f,		// 12
+		 1.0f, -1.0f, -1.0f,	 0.0f, -1.0f,  0.0f,	0.0f, 0.0f,		// 13
+		 1.0f, -1.0f,  1.0f,	 0.0f, -1.0f,  0.0f,	0.0f, 1.0f,		// 14
+		-1.0f, -1.0f,  1.0f,	 0.0f, -1.0f,  0.0f,	1.0f, 1.0f,		// 15
+
+		// TOP
+		-1.0f, -1.0f,  1.0f,	 0.0f,  0.0f,  1.0f,	0.0f, 0.0f,		// 16
+		-1.0f,  1.0f,  1.0f,	 0.0f,  0.0f,  1.0f,	1.0f, 0.0f,		// 17
+		 1.0f,  1.0f,  1.0f,	 0.0f,  0.0f,  1.0f,	1.0f, 1.0f,		// 18
+		 1.0f, -1.0f,  1.0f,	 0.0f,  0.0f,  1.0f,	0.0f, 1.0f,		// 19
+
+		 // BOTTOM
+		-1.0f, -1.0f, -1.0f,	 0.0f,  0.0f, -1.0f,	0.0f, 1.0f,		// 20
+		-1.0f,  1.0f, -1.0f,	 0.0f,  0.0f, -1.0f,	1.0f, 1.0f,		// 21
+		 1.0f,  1.0f, -1.0f,	 0.0f,  0.0f, -1.0f,	1.0f, 0.0f,		// 22
+		 1.0f, -1.0f, -1.0f,	 0.0f,  0.0f, -1.0f,	0.0f, 0.0f		// 23
 	};
 
 	GLuint indices[] = {
-		0, 1, 2, 3, 2, 1, // front
-		4, 5, 6, 7, 6, 5, // back
-		0, 4, 6, 0, 2, 6, // right
-		1, 5, 3, 3, 7, 5, // left
-		3, 7, 2, 7, 6, 2, // top
-		1, 5, 0, 5, 0, 4  // bottom
+		 0,  1,  2,  2,  3,  0,	// front
+		 4,  5,  6,  6,  7,  4,	// back
+		 8,  9, 10, 10, 11,  8, // rigth
+		12, 13, 14, 14, 15, 12, // left
+		16, 17, 18, 18, 19, 16,	// top
+		20, 21, 22, 22, 23, 20  // bottom
 	};
 
 
@@ -135,7 +161,8 @@ namespace TestGLFW
 		#version 460
 
 		layout(location = 0) in vec3 vertex_position;
-		layout(location = 1) in vec2 texture_coord;
+		layout(location = 1) in vec3 vertex_normal;
+		layout(location = 2) in vec2 texture_coord;
 
 		uniform mat4 model_matrix;
 		uniform mat4 view_projection_matrix;
@@ -143,12 +170,17 @@ namespace TestGLFW
 
 		out vec2 tex_coord_smile;
 		out vec2 tex_coord_quards;
+		out vec3 frag_position;
+		out vec3 frag_normal;
 
 		void main()
 		{
 			tex_coord_smile = texture_coord;
 			tex_coord_quards = texture_coord + vec2(current_frame / 1000.f, current_frame / 1000.f);
-			gl_Position = view_projection_matrix * model_matrix * vec4(vertex_position, 1.0);
+			frag_normal = mat3(transpose(inverse(model_matrix))) * vertex_normal;
+			vec4 vertex_position_world = model_matrix * vec4(vertex_position, 1.0f);
+			frag_position = vertex_position_world.xyz;
+			gl_Position = view_projection_matrix * vertex_position_world;
 		}
 	)";
 
@@ -158,27 +190,85 @@ namespace TestGLFW
 
 		in vec2 tex_coord_smile;
 		in vec2 tex_coord_quards;
+		in vec3 frag_position;
+		in vec3 frag_normal;
 
 		layout(binding = 0) uniform sampler2D InTexture_smile;
 		layout(binding = 1) uniform sampler2D InTexture_quards;
 
 		out vec4 frag_color;
 
+		uniform vec3 light_position;
+		uniform vec3 camera_position;
+		uniform vec3 light_color;
+		uniform float ambient_factor;
+		uniform float diffuse_factor;
+		uniform float specular_factor;
+		uniform float shininess;
+
 		void main()
 		{
-			frag_color = texture(InTexture_smile, tex_coord_smile) * texture(InTexture_quards, tex_coord_quards);
+			// ambient
+			vec3 ambient = ambient_factor * light_color;
+
+			// diffuse
+			vec3 normal = normalize(frag_normal);
+			vec3 light_dir = normalize(light_position - frag_position);
+			vec3 diffuse = diffuse_factor * light_color * max(dot(normal, light_dir), 0.0f);
+
+			// specular
+			vec3 view_dir = normalize(camera_position - frag_position);
+			vec3 reflect_dir = reflect(-light_dir, normal);
+			float specular_value = pow(max(dot(view_dir, reflect_dir), 0.0f), shininess);
+			vec3 specular = specular_factor * specular_value * light_color;
+			
+
+			//frag_color = texture(InTexture_smile, tex_coord_smile) * texture(InTexture_quards, tex_coord_quards);
+			frag_color = texture(InTexture_smile, tex_coord_smile) * vec4(ambient + diffuse + specular, 1.0f);
 		}
 	)";
 
+
+	// вершинный шейдер источника света
+	const char* light_source_vertex_shader = R"(
+		#version 460
+
+		layout(location = 0) in vec3 vertex_position;
+		layout(location = 1) in vec3 vertex_normal;
+		layout(location = 2) in vec2 texture_coord;
+
+		uniform mat4 model_matrix;
+		uniform mat4 view_projection_matrix;
+		uniform int current_frame;
+
+		void main()
+		{
+			gl_Position = view_projection_matrix * model_matrix * vec4(vertex_position * 0.1f, 1.0);
+		}
+	)";
+
+	// фрагментный шейдер источника света
+	const char* light_source_fragment_shader = R"(
+		#version 460
+
+		out vec4 frag_color;
+
+		uniform vec3 light_color;
+
+		void main()
+		{
+			frag_color = vec4(light_color, 1.0f);
+		}
+	)";
+
+
 	std::unique_ptr<ShaderProgram> p_shader_program;
+	std::unique_ptr<ShaderProgram> p_light_source_shader_program;
 	std::unique_ptr<VertexBuffer>  p_cube_positions_vbo;
 	std::unique_ptr<IndexBuffer>   p_cube_index_buffer;
 	std::unique_ptr<Texture2D>     p_texture_smile;
 	std::unique_ptr<Texture2D>     p_texture_quards;
-	std::unique_ptr<VertexArray>   p_vao;
-	glm::vec3 scale(1.0f, 1.0f, 1.0f);
-	float rotate = 0.0f;
-	glm::vec3 translate(0.0f, 0.0f, 1.0f);
+	std::unique_ptr<VertexArray>   p_cube_vao;
 	float m_background_color[4] = { 0.33f, 0.33f, 0.33f, 0.0f };
 
 	std::array<glm::vec3, 5> positions = {
@@ -208,31 +298,41 @@ namespace TestGLFW
 
 		p_shader_program->bind();
 
-		glm::mat4 model_matrix(1.0f);
-
-		model_matrix = glm::translate(model_matrix, translate);
-
+		/*glm::mat4 model_matrix(1.0f);
 		float rotate_in_rad = glm::radians(rotate);
+		model_matrix = glm::translate(model_matrix, translate);
 		model_matrix = glm::rotate(model_matrix, rotate_in_rad, glm::vec3(0, 0, 1));
-
 		model_matrix = glm::scale(model_matrix, scale);
+		p_shader_program->set_matrix4("model_matrix", model_matrix);*/
 
-		p_shader_program->set_matrix4("model_matrix", model_matrix);
-		static int current_frame = 0;
-		p_shader_program->set_int("current_frame", current_frame++ / 8);
-
-		camera.set_projection_mode(perspective_camera ? Camera::ProjectionMode::Perspective : Camera::ProjectionMode::Orthographic);
+		// cubes
 		p_shader_program->set_matrix4("view_projection_matrix", camera.get_projection_matrix() * camera.get_view_matrix());
-		Renderer_OpenGL::draw(*p_vao);
-
+		p_shader_program->set_vec3("light_color", light_source_color);
+		p_shader_program->set_vec3("camera_position", camera.get_position());
+		p_shader_program->set_vec3("light_position", light_source_position);
+		p_shader_program->set_float("ambient_factor", ambient_factor);
+		p_shader_program->set_float("diffuse_factor", diffuse_factor);
+		p_shader_program->set_float("specular_factor", specular_factor);
+		p_shader_program->set_float("shininess", shininess);
 		for (const glm::vec3& current_position : positions)
 		{
-			model_matrix = glm::mat4(1.0f);
+			glm::mat4 model_matrix = glm::mat4(1.0f);
 			model_matrix = glm::translate(model_matrix, current_position);
 			p_shader_program->set_matrix4("model_matrix", model_matrix);
 
-			Renderer_OpenGL::draw(*p_vao);
+			Renderer_OpenGL::draw(*p_cube_vao);
 		}
+
+		// light source
+		{
+			p_light_source_shader_program->bind();
+			p_light_source_shader_program->set_matrix4("view_projection_matrix", camera.get_projection_matrix() * camera.get_view_matrix());
+			glm::mat4 model_matrix = glm::mat4(1.0f);
+			model_matrix = glm::translate(model_matrix, light_source_position);
+			p_light_source_shader_program->set_matrix4("model_matrix", model_matrix);
+			p_light_source_shader_program->set_vec3("light_color", light_source_color);
+			Renderer_OpenGL::draw(*p_cube_vao);
+		}		
 
 		UIModule::on_ui_draw_begin();
 		on_ui_draw();
@@ -350,20 +450,26 @@ namespace TestGLFW
 			return false;
 		}
 
-		BufferLayout buffer_layout_vec3_vec2
+		BufferLayout buffer_layout_vec3_vec3_vec2
 		{
+			ShaderDataType::Float3,
 			ShaderDataType::Float3,
 			ShaderDataType::Float2
 		};
 
-		p_vao = std::make_unique<VertexArray>();
-		p_cube_positions_vbo = std::make_unique<VertexBuffer>(positions_coords, sizeof(positions_coords), buffer_layout_vec3_vec2);
+		p_cube_vao = std::make_unique<VertexArray>();
+		p_cube_positions_vbo = std::make_unique<VertexBuffer>(pos_norm_uv, sizeof(pos_norm_uv), buffer_layout_vec3_vec3_vec2);
 		p_cube_index_buffer = std::make_unique<IndexBuffer>(indices, sizeof(indices) / sizeof(GLuint));
 
-		p_vao->add_vertex_buffer(*p_cube_positions_vbo);
-		p_vao->set_index_buffer(*p_cube_index_buffer);
+		p_cube_vao->add_vertex_buffer(*p_cube_positions_vbo);
+		p_cube_vao->set_index_buffer(*p_cube_index_buffer);
 		// ------------------------------------------ //
 
+		p_light_source_shader_program = std::make_unique<ShaderProgram>(light_source_vertex_shader, light_source_fragment_shader);
+		if (!p_shader_program->is_compiled())
+		{
+			return false;
+		}
 
 		// цикл рендеринга
 		Renderer_OpenGL::enable_depth_testing();

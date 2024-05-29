@@ -4,6 +4,8 @@
 #include <imgui/imgui.h>
 #include <imgui/imgui_internal.h>
 
+#include <glm/gtc/type_ptr.hpp>	
+
 #include <TestGLFWCore/Input.hpp>
 #include <TestGLFWCore/Application.hpp>
 
@@ -12,6 +14,12 @@ class TestGLFWEditor : public TestGLFW::Application
 {
 	double m_initial_mouse_pos_x = 0.0;
 	double m_initial_mouse_pos_y = 0.0;
+	float camera_position[3] = { 0.0f, 0.0f, 2.0f };
+	float camera_rotation[3] = { 0.0f, 0.0f, 0.0f };
+	float camera_fov = 60.f;
+	float camera_near_plane = 0.1f;
+	float camera_far_plane = 100.0f;
+	bool perspective_camera = true;
 
 
 	void on_update() override
@@ -168,6 +176,14 @@ class TestGLFWEditor : public TestGLFW::Application
 		camera_far_plane = camera.get_far_clip_plane();
 		
 		ImGui::Begin("Editor");
+		ImGui::SliderFloat3("light source position", glm::value_ptr(light_source_position), -10.0f, 10.0f);
+		ImGui::ColorEdit3("light source color", glm::value_ptr(light_source_color));
+
+		ImGui::SliderFloat("ambient factor", &ambient_factor, 0.0f, 1.0f);
+		ImGui::SliderFloat("diffuse factor", &diffuse_factor, 0.0f, 1.0f);
+		ImGui::SliderFloat("specular factor", &specular_factor, 0.0f, 1.0f);
+		ImGui::SliderFloat("shininess", &shininess, 1.0f, 128.0f);
+
 		if (ImGui::SliderFloat3("camera position", camera_position, -10.0f, 10.0f))
 		{
 			camera.set_position(glm::vec3(camera_position[0], camera_position[1], camera_position[2]));
@@ -190,7 +206,7 @@ class TestGLFWEditor : public TestGLFW::Application
 		}
 		if (ImGui::Checkbox("perspective camera", &perspective_camera))
 		{
-			camera.set_projection_mode(/*perspective_camera ? TestGLFW::Camera::ProjectionMode::Perspective : */TestGLFW::Camera::ProjectionMode::Orthographic);
+			camera.set_projection_mode(perspective_camera ? TestGLFW::Camera::ProjectionMode::Perspective : TestGLFW::Camera::ProjectionMode::Orthographic);
 		}
 		ImGui::End();
 	}
